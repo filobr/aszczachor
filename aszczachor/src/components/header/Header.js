@@ -5,15 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
 
-const pages = [
-  "Editorials",
-  "Videoclip",
-  "Influencers",
-  "Collections",
-  "About",
-];
-
-const Header = () => {
+const Header = ({ route }) => {
   const [anchorElement, setAnchorElement] = useState(null);
   const open = Boolean(anchorElement);
   const handleClick = event => {
@@ -24,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <AppBar
         sx={{
           background: "#FFFFFF",
@@ -35,11 +27,24 @@ const Header = () => {
         <Toolbar>
           <Tabs sx={{ marginLeft: "auto", marginRight: "auto" }}>
             <Tab onClick={handleClick} label="Fashion Styling" />
-            <Tab component={Link} to="/collections" label={pages[3]} />
-            <Tab component={Link} to="/about" label={pages[4]} />
+            <Tab
+              component={Link}
+              to={route.collections.path}
+              label={route.collections.label}
+            />
+            <Tab
+              component={Link}
+              to={route.about.path}
+              label={route.about.label}
+            />
           </Tabs>
           <FacebookIcon />
-          <InstagramIcon />
+          <InstagramIcon
+            sx={{ cursor: "pointer" }}
+            onClick={() =>
+              window.open("https://www.instagram.com/aleksandra.szczachor/")
+            }
+          />
           <EmailIcon />
         </Toolbar>
       </AppBar>
@@ -60,17 +65,17 @@ const Header = () => {
         transformOrigin={{ horizontal: "center", vertical: "top" }}
         anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
       >
-        <MenuItem component={Link} to="/editorials">
-          {pages[0]}
+        <MenuItem component={Link} to={route.editorials.path}>
+          {route.editorials.label}
         </MenuItem>
-        <MenuItem component={Link} to="/videoclip">
-          {pages[1]}
+        <MenuItem component={Link} to={route.videoclip.path}>
+          {route.videoclip.label}
         </MenuItem>
-        <MenuItem component={Link} to="/influencers">
-          {pages[2]}
+        <MenuItem component={Link} to={route.influencers.path}>
+          {route.influencers.label}
         </MenuItem>
       </Menu>
-    </React.Fragment>
+    </>
   );
 };
 
