@@ -1,0 +1,45 @@
+.mainContainer {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  background: #ffffff;
+  width: 100%;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.logo {
+  text-align: center;
+}
+
+.navigationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileMenuIcon {
+  width: 10%;
+}
+
+.buttonBar {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.socialButtons {
+  display: inline-flex;
+  width: 10%;
+  justify-content: flex-end;
+}
+
+.socialButtons img {
+  width: 30px;
+  height: 30px;
+}

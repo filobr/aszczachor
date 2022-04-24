@@ -1,0 +1,16 @@
+.link {
+  color: #666666;
+  font-family: Tahoma;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 20px 40px 20px 40px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.link:hover {
+  color: #f2de5f;
+}

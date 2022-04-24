@@ -8,7 +8,7 @@ import Editorials from "./components/fashionStyling/Editorials";
 import Videoclip from "./components/fashionStyling/Videoclip";
 import Influencers from "./components/fashionStyling/Influencers";
 
-const route = {
+const routes = {
   mainPage: {
     path: "/",
     label: "Main",
@@ -38,13 +38,13 @@ const route = {
 const App = () => {
   return (
     <BrowserRouter>
-      <Header route={route} />
-      <Route path={route.mainPage.path} exact component={MainPage} />
-      <Route path={route.editorials.path} exact component={Editorials} />
-      <Route path={route.videoclip.path} exact component={Videoclip} />
-      <Route path={route.influencers.path} exact component={Influencers} />
-      <Route path={route.collections.path} exact component={Collections} />
-      <Route path={route.about.path} exact component={About} />
+      <Header routes={routes} />
+      <Route path={routes.mainPage.path} exact component={MainPage} />
+      <Route path={routes.editorials.path} exact component={Editorials} />
+      <Route path={routes.videoclip.path} exact component={Videoclip} />
+      <Route path={routes.influencers.path} exact component={Influencers} />
+      <Route path={routes.collections.path} exact component={Collections} />
+      <Route path={routes.about.path} exact component={About} />
       <Footer />
     </BrowserRouter>
   );
