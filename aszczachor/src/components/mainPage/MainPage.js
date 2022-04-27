@@ -1,5 +1,5 @@
-import MainContent from "./MainContent";
-import Videos from "./Videos";
+import MainContent from "components/mainPage/MainContent";
+import Videos from "components/mainPage/Videos";
 
 const MainPage = () => {
   return (

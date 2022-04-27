@@ -1,9 +1,9 @@
-import styles from "./navbar.module.css";
-import logo from "../../assets/logo.png";
-import NavButton from "./NavButton";
-import igIcon from "../../assets/socialButtons/instagram_icon.png";
-import fbIcon from "../../assets/socialButtons/facebook_icon.png";
-import mailIcon from "../../assets/socialButtons/mail_icon.png";
+import styles from "components/header/navbar.module.css";
+import logo from "assets/logo.png";
+import NavButton from "components/header/NavButton";
+import igIcon from "assets/socialButtons/instagram_icon.png";
+import fbIcon from "assets/socialButtons/facebook_icon.png";
+import mailIcon from "assets/socialButtons/mail_icon.png";
 
 const Navbar = ({ routes }) => {
   return (
