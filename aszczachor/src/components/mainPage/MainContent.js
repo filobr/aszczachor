@@ -1,4 +1,3 @@
-import "components/mainPage/mainContent.css";
 import img1 from "assets/mainPage/cdc.jpg";
 import img2 from "assets/mainPage/DSC_2525.jpg";
 import img3 from "assets/mainPage/DSC8427.jpg";
