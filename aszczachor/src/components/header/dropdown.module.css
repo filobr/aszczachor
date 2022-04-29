@@ -1,0 +1,31 @@
+.dropdownContainer {
+  width: 200px;
+  position: fixed;
+  background-color: #ffffff;
+  border: 3px solid #cfcfcf;
+  border-radius: 10px;
+}
+
+.dropdownContainer ul {
+  list-style-type: none;
+  margin: 2px;
+  padding: 0;
+}
+
+.dropdownContainer ul button {
+  color: #666666;
+  font-family: Tahoma;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border: none;
+  width: 100%;
+}
+
+.dropdownContainer ul button:hover {
+  color: #f2de5f;
+}
