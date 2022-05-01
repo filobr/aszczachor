@@ -12,11 +12,10 @@
 }
 
 .container ul button {
-  color: #666666;
+  color: #000000;
   font-family: Tahoma;
-  font-weight: bold;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
   background-color: #ffffff;
   padding: 5px 5px;
@@ -31,7 +30,7 @@
 }
 
 .container ul button img {
-  height: 16px;
-  width: 16px;
+  height: 12px;
+  width: 12px;
   margin-left: 5px;
 }

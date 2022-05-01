@@ -1,0 +1,57 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.content {
+  width: 100%;
+  height: 90%;
+  display: flex;
+}
+
+.bottom {
+  width: 100%;
+  height: 5%;
+}
+
+.left,
+.right {
+  height: 100%;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left img,
+.right img,
+.top img,
+.photo img {
+  cursor: pointer;
+}
+
+.photo {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo img {
+  max-height: 100%;
+}

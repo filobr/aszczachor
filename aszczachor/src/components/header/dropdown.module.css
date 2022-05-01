@@ -5,7 +5,7 @@
   text-align: center;
   border: #dfdfdf solid 2px;
   border-radius: 10px;
-  top: 178px;
+  top: 163px;
 }
 
 .dropdownContainer ul {
@@ -15,11 +15,9 @@
 }
 
 .dropdownContainer ul button {
-  color: #666666;
-  font-family: Tahoma;
-  font-weight: bold;
+  color: #000000;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   background-color: #ffffff;
   padding: 10px 20px;

@@ -1,5 +1,5 @@
 import styles from "components/header/navbar.module.css";
-import logo from "assets/logo.png";
+import logo from "assets/logo/logo.jpg";
 import NavButton from "components/header/NavButton";
 import igIcon from "assets/socialButtons/instagram_icon.png";
 import fbIcon from "assets/socialButtons/facebook_icon.png";

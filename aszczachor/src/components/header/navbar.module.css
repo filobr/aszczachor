@@ -31,6 +31,11 @@
   text-align: center;
 }
 
+.logo img {
+  width: 300px;
+  height: 100px;
+}
+
 .navigationContainerDesktop {
   display: flex;
   justify-content: center;
@@ -69,7 +74,7 @@
 
 .mobile {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .hamburgerIcon {

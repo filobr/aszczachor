@@ -4,7 +4,7 @@ import img3 from "assets/mainPage/DSC8427.jpg";
 import img4 from "assets/mainPage/DSC8465b.jpg";
 import img5 from "assets/mainPage/DUMAFULLSIZE5.jpg";
 import img6 from "assets/mainPage/IMG_7268.jpg";
-import img7 from "assets/mainPage/IMG_7319.jpg";
+import img7 from "assets/mainPage/p273394106_659193758458397_5525131181167737708_n.jpg";
 import img8 from "assets/mainPage/oczymag-edytorial-flowery-garden-fot-aleksandra-mrowczynska-wrzesien-2021-8-scaled.jpg";
 import img9 from "assets/mainPage/p5a.jpg";
 import img10 from "assets/mainPage/p11a.jpg";
@@ -18,19 +18,21 @@ import img17 from "assets/mainPage/p20200710_OUTSIDER_2540_v1.jpg";
 import img18 from "assets/mainPage/p20201025__095a.jpg";
 import img19 from "assets/mainPage/p146858637_440191887423155_7554899254432460725_n.jpg";
 import img20 from "assets/mainPage/p183205049_223070066246115_4749856819184857082_n.jpg";
-import img21 from "assets/mainPage/p273394106_659193758458397_5525131181167737708_n.jpg";
+import styles from "components/mainPage/mainContent.module.css";
+import Modal from "components/mainPage/Modal";
+import { useState } from "react";
 
 const photos = [
   img1,
   img2,
   img3,
-  img4,
+  img10,
   img5,
   img6,
   img7,
   img8,
   img9,
-  img10,
+  img4,
   img11,
   img12,
   img13,
@@ -41,22 +43,59 @@ const photos = [
   img18,
   img19,
   img20,
-  img21,
 ];
 
 const MainContent = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [openModal, setOpenModal] = useState(false);
+
+  const onPhotoClick = ({ currentTarget }) => {
+    setSelectedPhoto(currentTarget.dataset.index);
+    setOpenModal(true);
+  };
+
+  const nextPhoto = () => {
+    setSelectedPhoto(
+      selectedPhoto === photos.length - 1 ? 0 : Number(selectedPhoto) + 1
+    );
+  };
+
+  const prevPhoto = () => {
+    setSelectedPhoto(
+      selectedPhoto === 0 ? photos.length - 1 : Number(selectedPhoto) - 1
+    );
+  };
+
+  const closeModal = () => {
+    setOpenModal(false);
+    setSelectedPhoto(null);
+  };
+
   return (
-    <div>
-      {photos.map(photo => {
-        return (
-          <img
-            src={photo}
-            alt=""
-            style={{ maxHeight: "600px", maxWidth: "400px" }}
-          />
-        );
-      })}
-    </div>
+    <>
+      <div className={styles.container}>
+        {photos.map((photo, index) => {
+          return (
+            <img
+              src={photo}
+              key={index}
+              data-index={index}
+              alt=""
+              onClick={onPhotoClick}
+            />
+          );
+        })}
+      </div>
+      {openModal ? (
+        <Modal
+          selected={selectedPhoto}
+          photos={photos}
+          nextPhoto={nextPhoto}
+          prevPhoto={prevPhoto}
+          closeModal={closeModal}
+        />
+      ) : null}
+    </>
   );
 };
 
