@@ -1,12 +1,12 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import Footer from "components/footer/Footer";
-import MainPage from "components/mainPage/MainPage";
+import MainContent from "views/mainPage/MainContent";
 import About from "components/about/About";
 import Collections from "components/collections/Collections";
-import Editorials from "components/fashionStyling/Editorials";
-import Videoclip from "components/fashionStyling/Videoclip";
-import Influencers from "components/fashionStyling/Influencers";
-import Navbar from "components/header/Navbar";
+import Editorials from "views/fashionStyling/Editorials";
+import Videoclip from "views/fashionStyling/Videoclip";
+import Influencers from "views/fashionStyling/Influencers";
+import Navbar from "views/navigation/Navbar";
 
 const routes = {
   mainPage: {
@@ -39,7 +39,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <Navbar routes={routes} />
-      <Route path={routes.mainPage.path} exact component={MainPage} />
+      <Route path={routes.mainPage.path} exact component={MainContent} />
       <Route path={routes.editorials.path} exact component={Editorials} />
       <Route path={routes.videoclip.path} exact component={Videoclip} />
       <Route path={routes.influencers.path} exact component={Influencers} />

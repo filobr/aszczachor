@@ -1,4 +1,4 @@
-import styles from "components/header/navbar.module.css";
+import styles from "views/navigation/navbar.module.css";
 import logo from "assets/logo/logo.jpg";
 import NavButton from "components/header/NavButton";
 import igIcon from "assets/socialButtons/instagram_icon.png";
