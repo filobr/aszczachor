@@ -4,7 +4,8 @@
   }
 }
 @media screen and (min-width: 801px) {
-  .hamburgerIcon {
+  .hamburgerIcon,
+  .mobDiv {
     display: none !important;
   }
   .logo {
@@ -14,6 +15,7 @@
 }
 
 .mainContainer {
+  z-index: 3;
   position: sticky;
   display: flex;
   flex-direction: column;
@@ -79,8 +81,14 @@
 
 .hamburgerIcon {
   width: 20%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hamburgerIcon img {
   cursor: pointer;
+}
+
+.mobDiv {
+  width: 20%;
 }

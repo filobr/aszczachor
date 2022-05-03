@@ -1,12 +1,14 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import Footer from "components/footer/Footer";
+import Footer from "views/footer/Footer";
 import MainContent from "views/mainPage/MainContent";
-import About from "components/about/About";
-import Collections from "components/collections/Collections";
+import About from "views/about/About";
+import Collections from "views/collections/Collections";
 import Editorials from "views/fashionStyling/Editorials";
 import Videoclip from "views/fashionStyling/Videoclip";
 import Influencers from "views/fashionStyling/Influencers";
 import Navbar from "views/navigation/Navbar";
+import Campaign from "views/collections/Campaign";
+import FashionEditorials from "views/collections/FashionEditorials";
 
 const routes = {
   mainPage: {
@@ -25,9 +27,17 @@ const routes = {
     path: "/influencers",
     label: "Influencers",
   },
+  campaign: {
+    path: "/campaign",
+    label: "Campaign",
+  },
   collections: {
     path: "/collections",
     label: "Collections",
+  },
+  fashionEditorials: {
+    path: "/fashion-editorials",
+    label: "Fashion editorials",
   },
   about: {
     path: "/about",
@@ -44,6 +54,12 @@ const App = () => {
       <Route path={routes.videoclip.path} exact component={Videoclip} />
       <Route path={routes.influencers.path} exact component={Influencers} />
       <Route path={routes.collections.path} exact component={Collections} />
+      <Route path={routes.campaign.path} exact component={Campaign} />
+      <Route
+        path={routes.fashionEditorials.path}
+        exact
+        component={FashionEditorials}
+      />
       <Route path={routes.about.path} exact component={About} />
       <Footer />
     </BrowserRouter>

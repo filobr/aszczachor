@@ -1,3 +1,6 @@
+import styles from "views/mainPage/mainContent.module.css";
+import Modal from "components/modal/Modal";
+import { useState } from "react";
 import img1 from "assets/mainPage/cdc.jpg";
 import img2 from "assets/mainPage/DSC_2525.jpg";
 import img3 from "assets/mainPage/DSC8427.jpg";
@@ -18,9 +21,6 @@ import img17 from "assets/mainPage/p20200710_OUTSIDER_2540_v1.jpg";
 import img18 from "assets/mainPage/p20201025__095a.jpg";
 import img19 from "assets/mainPage/p146858637_440191887423155_7554899254432460725_n.jpg";
 import img20 from "assets/mainPage/p183205049_223070066246115_4749856819184857082_n.jpg";
-import styles from "views/mainPage/mainContent.module.css";
-import Modal from "components/modal/Modal";
-import { useState } from "react";
 
 const photos = [
   img1,

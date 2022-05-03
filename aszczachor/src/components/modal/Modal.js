@@ -1,7 +1,7 @@
 import styles from "components/modal/modal.module.css";
-import prevIcon from "assets/prev-icon.png";
-import nextIcon from "assets/next-icon.png";
-import closeIcon from "assets/close-icon.png";
+import prevIcon from "assets/modal/prev-icon.png";
+import nextIcon from "assets/modal/next-icon.png";
+import closeIcon from "assets/modal/close-icon.png";
 import { useEffect, useRef } from "react";
 
 const Modal = ({ selected, setSelected, photos, setOpenModal }) => {
@@ -23,11 +23,11 @@ const Modal = ({ selected, setSelected, photos, setOpenModal }) => {
   const image = useRef();
 
   useEffect(() => {
-    const onModalClick = event => {
+    const onModalClick = ({ target }) => {
       if (
-        (image.current && image.current.contains(event.target)) ||
-        (left.current && left.current.contains(event.target)) ||
-        (right.current && right.current.contains(event.target))
+        (image.current && image.current.contains(target)) ||
+        (left.current && left.current.contains(target)) ||
+        (right.current && right.current.contains(target))
       ) {
         return;
       }
@@ -53,7 +53,9 @@ const Modal = ({ selected, setSelected, photos, setOpenModal }) => {
           <img src={nextIcon} alt="next" onClick={nextPhoto} ref={right} />
         </div>
       </div>
-      <div className={styles.bottom}></div>
+      <div className={styles.bottom}>
+        {Number(selected) + 1} of {photos.length}
+      </div>
     </div>
   );
 };
