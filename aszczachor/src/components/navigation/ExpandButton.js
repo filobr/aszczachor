@@ -1,29 +1,49 @@
 import expandArrow from "assets/mobileMenu/expand-arrow.png";
 import collapseArrow from "assets/mobileMenu/collapse-arrow.png";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const ExpandButton = ({ label, changeState, isOpen, list, openMenu }) => {
+const ExpandButton = ({
+  label,
+  changeState,
+  isOpened,
+  list,
+  SetIsMenuOpened,
+}) => {
   return (
     <>
       <li key={label} style={{ marginLeft: "17px" }}>
-        <button onClick={changeState}>
+        <span onClick={changeState}>
           {label}
-          <img src={isOpen ? collapseArrow : expandArrow} alt="" />
-        </button>
+          <img
+            src={isOpened ? collapseArrow : expandArrow}
+            alt={isOpened ? collapseArrow : expandArrow}
+          />
+        </span>
       </li>
-      {isOpen
-        ? list.map(item => {
-            return (
-              <Link to={item.path} onClick={openMenu}>
-                <li key={item.label}>
-                  <button>{item.label}</button>
-                </li>
-              </Link>
-            );
-          })
-        : null}
+      {isOpened &&
+        list.map(({ label, path }) => (
+          <Link
+            style={{ textDecoration: "none" }}
+            to={path}
+            onClick={SetIsMenuOpened}
+            key={label}
+          >
+            <li>
+              <span>{label}</span>
+            </li>
+          </Link>
+        ))}
     </>
   );
+};
+
+ExpandButton.propTypes = {
+  label: PropTypes.string,
+  changeState: PropTypes.func,
+  isOpened: PropTypes.bool,
+  list: PropTypes.array,
+  SetIsMenuOpened: PropTypes.func,
 };
 
 export default ExpandButton;

@@ -1,9 +1,15 @@
-const ImportAll = r => {
-  let images = {};
-  r.keys().map(item => {
-    return (images[item.replace("./", "")] = r(item));
-  });
-  return images;
-};
+const importAll = require =>
+  require.keys().reduce((acc, next) => {
+    acc[next.replace("./", "")] = require(next);
+    return acc;
+  }, {});
 
-export default ImportAll;
+const images = importAll(
+  require.context(
+    "assets/collections/campaign/leshka",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+);
+
+console.log(images);

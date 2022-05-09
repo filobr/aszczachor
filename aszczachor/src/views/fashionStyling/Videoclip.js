@@ -34,17 +34,15 @@ const videos = [
 const Videoclip = () => {
   return (
     <div className={styles.videosContainer}>
-      {videos.map(video => {
-        return (
-          <iframe
-            src={video.path}
-            title={video.title}
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        );
-      })}
+      {videos.map(({ path, title }) => (
+        <iframe
+          key={title}
+          src={path}
+          title={title}
+          frameBorder="0"
+          allowFullScreen
+        />
+      ))}
     </div>
   );
 };

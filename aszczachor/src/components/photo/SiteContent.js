@@ -1,13 +1,13 @@
 import Modal from "components/modal/Modal";
 import { useState } from "react";
 import styles from "components/photo/siteContent.module.css";
-
+import PropTypes from "prop-types";
 const SiteContent = ({ group1, group2, group3 }) => {
   const [selectedGroup, setSelectedGroup] = useState(null);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
-  const [openDescription, setOpenDescription] = useState(false);
-  const [hoveredPhoto, setHoveredPhoto] = useState(null);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
+  const [isModalOpened, setIsModalOpened] = useState(false);
+  const [isDescriptionOpened, setIsDescriptionOpened] = useState(false);
+  const [isPhotoHovered, setIsPhotoHovered] = useState(null);
 
   const mainPhotos = [group1[0], group2[0], group3[0]];
 
@@ -26,22 +26,22 @@ const SiteContent = ({ group1, group2, group3 }) => {
         console.log("Not speciefied group");
         break;
     }
-    setSelectedPhoto(0);
-    setOpenModal(true);
+    setSelectedPhotoIndex(0);
+    setIsModalOpened(true);
   };
 
   const onPhotoHover = ({ currentTarget }) => {
-    setHoveredPhoto(currentTarget.dataset.index);
-    setOpenDescription(true);
+    setIsPhotoHovered(currentTarget.dataset.index);
+    setIsDescriptionOpened(true);
   };
 
   const onMouseEnter = ({ currentTarget }) => {
-    setHoveredPhoto(currentTarget.dataset.index);
+    setIsPhotoHovered(currentTarget.dataset.index);
   };
 
   const onMouseLeave = () => {
-    setHoveredPhoto(null);
-    setOpenDescription(false);
+    setIsPhotoHovered(null);
+    setIsDescriptionOpened(false);
   };
 
   return (
@@ -49,34 +49,39 @@ const SiteContent = ({ group1, group2, group3 }) => {
       <div className={styles.container}>
         {mainPhotos.map((photo, index) => {
           return (
-            <div className={styles.photo}>
+            <div key={index} className={styles.photo}>
               <img
                 src={photo}
-                key={index}
                 data-index={index}
-                alt=""
+                alt={`Img number ${index + 1}`}
                 onClick={onPhotoClick}
                 onMouseEnter={onMouseEnter}
                 onMouseOver={onPhotoHover}
                 onMouseLeave={onMouseLeave}
               />
-              {openDescription && index === Number(hoveredPhoto) ? (
-                <div className={styles.description}>{hoveredPhoto}</div>
+              {isDescriptionOpened && index === Number(isPhotoHovered) ? (
+                <div className={styles.description}>{isPhotoHovered}</div>
               ) : null}
             </div>
           );
         })}
       </div>
-      {openModal ? (
+      {isModalOpened ? (
         <Modal
-          selected={selectedPhoto}
+          selected={selectedPhotoIndex}
           photos={selectedGroup}
-          setSelected={setSelectedPhoto}
-          setOpenModal={setOpenModal}
+          setSelected={setSelectedPhotoIndex}
+          setIsModalOpened={setIsModalOpened}
         />
       ) : null}
     </>
   );
+};
+
+SiteContent.propTypes = {
+  group1: PropTypes.array,
+  group2: PropTypes.array,
+  group3: PropTypes.array,
 };
 
 export default SiteContent;

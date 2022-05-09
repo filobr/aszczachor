@@ -46,37 +46,35 @@ const photos = [
 ];
 
 const MainContent = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
-  const [openModal, setOpenModal] = useState(false);
+  const [selectedPhotoIndex, setSelectedPhotoIndexIndex] = useState(null);
+  const [isModalOpened, setIsModalOpened] = useState(false);
 
   const onPhotoClick = ({ currentTarget }) => {
-    setSelectedPhoto(currentTarget.dataset.index);
-    setOpenModal(true);
+    setSelectedPhotoIndexIndex(Number(currentTarget.dataset.index));
+    setIsModalOpened(true);
   };
 
   return (
     <>
       <div className={styles.container}>
-        {photos.map((photo, index) => {
-          return (
-            <img
-              src={photo}
-              key={index}
-              data-index={index}
-              alt=""
-              onClick={onPhotoClick}
-            />
-          );
-        })}
+        {photos.map((photo, index) => (
+          <img
+            src={photo}
+            key={index}
+            data-index={index}
+            alt={`Img number ${index + 1}`}
+            onClick={onPhotoClick}
+          />
+        ))}
       </div>
-      {openModal ? (
+      {isModalOpened && (
         <Modal
-          selected={selectedPhoto}
+          selected={selectedPhotoIndex}
           photos={photos}
-          setSelected={setSelectedPhoto}
-          setOpenModal={setOpenModal}
+          setSelected={setSelectedPhotoIndexIndex}
+          setIsModalOpened={setIsModalOpened}
         />
-      ) : null}
+      )}
     </>
   );
 };

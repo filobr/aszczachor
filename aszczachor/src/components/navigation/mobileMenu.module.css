@@ -11,28 +11,41 @@
 .container ul {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.container ul button {
+.container ul li {
+  text-align: center;
+}
+
+.container ul li span {
+  display: block;
   color: #000000;
   font-family: Tahoma;
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
   background-color: #ffffff;
-  padding: 5px 5px;
+  padding: 5px;
   text-transform: uppercase;
   border: none;
   width: 100%;
-  text-align: center;
 }
 
-.container ul button:hover {
+.container ul span:hover {
   color: #f2de5f;
 }
 
-.container ul button img {
+.container ul span img {
   height: 12px;
   width: 12px;
   margin-left: 5px;
+}
+
+@media screen and (min-width: 801px) {
+  .container {
+    display: none;
+  }
 }

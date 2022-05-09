@@ -3,8 +3,9 @@ import prevIcon from "assets/modal/prev-icon.png";
 import nextIcon from "assets/modal/next-icon.png";
 import closeIcon from "assets/modal/close-icon.png";
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
-const Modal = ({ selected, setSelected, photos, setOpenModal }) => {
+const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
   const nextPhoto = () => {
     setSelected(selected === photos.length - 1 ? 0 : Number(selected) + 1);
   };
@@ -14,7 +15,7 @@ const Modal = ({ selected, setSelected, photos, setOpenModal }) => {
   };
 
   const closeModal = () => {
-    setOpenModal(false);
+    setIsModalOpened(false);
     setSelected(null);
   };
 
@@ -58,6 +59,13 @@ const Modal = ({ selected, setSelected, photos, setOpenModal }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  selected: PropTypes.number,
+  setSelected: PropTypes.func,
+  photos: PropTypes.array,
+  setIsModalOpened: PropTypes.func,
 };
 
 export default Modal;

@@ -10,7 +10,7 @@ iframe {
   margin-bottom: 25px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 801px) {
   iframe {
     height: 300px;
   }
@@ -25,5 +25,14 @@ iframe {
 @media screen and (min-width: 1200px) {
   iframe {
     height: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  iframe {
+    height: 300px;
+  }
+  .videosContainer {
+    width: 80%;
   }
 }

@@ -2,16 +2,17 @@ import styles from "components/navigation/mobileMenu.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import ExpandButton from "./ExpandButton";
+import PropTypes from "prop-types";
 
 const MobileMenu = ({
   fashionStyling,
   collections,
   links,
-  openMenu,
+  SetIsMenuOpened,
   menuBtn,
 }) => {
-  const [openFashionStyling, setOpenFashionStyling] = useState(false);
-  const [openCollections, setOpenCollections] = useState(false);
+  const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
+  const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -22,51 +23,52 @@ const MobileMenu = ({
       ) {
         return;
       }
-      openMenu(false);
+      SetIsMenuOpened(false);
     };
     document.addEventListener("click", onOutsideClick, true);
     return () => document.removeEventListener("click", onOutsideClick, true);
   });
-
-  const onFashionStylingClick = () => {
-    openFashionStyling
-      ? setOpenFashionStyling(false)
-      : setOpenFashionStyling(true);
-  };
-
-  const onCollectionsClick = () => {
-    openCollections ? setOpenCollections(false) : setOpenCollections(true);
-  };
 
   return (
     <div className={styles.container} ref={ref}>
       <ul>
         <ExpandButton
           label="Fashion Styling"
-          changeState={onFashionStylingClick}
-          isOpen={openFashionStyling}
+          changeState={() => setIsFashionStylingOpened(!isFashionStylingOpened)}
+          isOpened={isFashionStylingOpened}
           list={fashionStyling}
-          openMenu={openMenu}
+          SetIsMenuOpened={SetIsMenuOpened}
         />
         <ExpandButton
           label="Collections"
-          changeState={onCollectionsClick}
-          isOpen={openCollections}
+          changeState={() => setIsCollectionsOpened(!isCollectionsOpened)}
+          isOpened={isCollectionsOpened}
           list={collections}
-          openMenu={openMenu}
+          SetIsMenuOpened={SetIsMenuOpened}
         />
-        {links.map(item => {
-          return (
-            <Link to={item.path} onClick={openMenu}>
-              <li key={item.label}>
-                <button>{item.label}</button>
-              </li>
-            </Link>
-          );
-        })}
+        {links.map(({ path, label }) => (
+          <Link
+            style={{ textDecoration: "none" }}
+            to={path}
+            onClick={SetIsMenuOpened}
+            key={label}
+          >
+            <li>
+              <span>{label}</span>
+            </li>
+          </Link>
+        ))}
       </ul>
     </div>
   );
+};
+
+MobileMenu.propTypes = {
+  fashionStyling: PropTypes.array,
+  collections: PropTypes.array,
+  links: PropTypes.array,
+  SetIsMenuOpened: PropTypes.func,
+  menuBtn: PropTypes.object,
 };
 
 export default MobileMenu;

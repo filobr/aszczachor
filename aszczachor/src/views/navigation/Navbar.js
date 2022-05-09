@@ -1,5 +1,6 @@
 import styles from "views/navigation/navbar.module.css";
 import logo from "assets/logo/logo.jpg";
+import NavButtonLink from "components/navigation/NavButtonLink";
 import NavButton from "components/navigation/NavButton";
 import igIcon from "assets/socialButtons/instagram_icon.png";
 import fbIcon from "assets/socialButtons/facebook_icon.png";
@@ -10,6 +11,7 @@ import Dropdown from "components/navigation/Dropdown";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import MobileMenu from "components/navigation/MobileMenu";
+import PropTypes from "prop-types";
 
 const Navbar = ({ routes }) => {
   const socialPaths = {
@@ -33,34 +35,23 @@ const Navbar = ({ routes }) => {
 
   const mobileMenuList = [routes.about];
 
-  const [openFashionStylingDropdown, setOpenFashionStylingDropdown] =
-    useState(false);
-  const [openCollectionsDropdown, setOpenCollectionsDropdown] = useState(false);
-  const [openHamburgerMenu, setOpenHamburgerMenu] = useState(false);
+  const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
+  const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
+  const [isHamburgerMenuOpened, setIsHamburgerMenuOpened] = useState(false);
   const refFashion = useRef();
   const menuBtn = useRef();
   const refCollections = useRef();
 
-  const onHamburgerClick = () => {
-    openHamburgerMenu
-      ? setOpenHamburgerMenu(false)
-      : setOpenHamburgerMenu(true);
-  };
-
   useEffect(() => {
     const onBodyClick = ({ target }) => {
-      let ref;
-      if (openFashionStylingDropdown) {
-        ref = refFashion;
-      } else if (openCollectionsDropdown) {
-        ref = refCollections;
-      }
-
-      if (ref.current && !ref.current.contains(target)) {
+      if (
+        (refFashion.current && refFashion.current.contains(target)) ||
+        (refCollections.current && refCollections.current.contains(target))
+      ) {
         return;
       }
-      setOpenFashionStylingDropdown(false);
-      setOpenCollectionsDropdown(false);
+      setIsFashionStylingOpened(false);
+      setIsCollectionsOpened(false);
     };
 
     document.addEventListener("click", onBodyClick, true);
@@ -80,9 +71,9 @@ const Navbar = ({ routes }) => {
           </div>
           <div className={styles.hamburgerIcon}>
             <img
-              src={openHamburgerMenu ? closeIcon : hamburgerIcon}
+              src={isHamburgerMenuOpened ? closeIcon : hamburgerIcon}
               alt=""
-              onClick={onHamburgerClick}
+              onClick={() => setIsHamburgerMenuOpened(!isHamburgerMenuOpened)}
               ref={menuBtn}
             />
           </div>
@@ -90,34 +81,34 @@ const Navbar = ({ routes }) => {
         <div className={styles.navigationContainerDesktop}>
           <div className={styles.emptyDiv}></div>
           <div className={styles.buttonBar}>
-            <div className={styles.dropdownMenu}>
+            <div className={styles.dropdownMenu} ref={refFashion}>
               <NavButton
                 label="Fashion Styling"
-                onClick={() => setOpenFashionStylingDropdown(true)}
+                onClick={() =>
+                  setIsFashionStylingOpened(!isFashionStylingOpened)
+                }
               />
-              {openFashionStylingDropdown ? (
+              {isFashionStylingOpened && (
                 <Dropdown
                   items={fashionStylingDropdown}
-                  onClick={() => setOpenFashionStylingDropdown(false)}
-                  ref={refFashion}
+                  onClick={() => setIsFashionStylingOpened(false)}
                 />
-              ) : null}
+              )}
             </div>
 
-            <div className={styles.dropdownMenu}>
+            <div className={styles.dropdownMenu} ref={refCollections}>
               <NavButton
                 label="Collections"
-                onClick={() => setOpenCollectionsDropdown(true)}
+                onClick={() => setIsCollectionsOpened(!isCollectionsOpened)}
               />
-              {openCollectionsDropdown ? (
+              {isCollectionsOpened && (
                 <Dropdown
                   items={collectionsDropdown}
-                  onClick={() => setOpenCollectionsDropdown(false)}
-                  ref={refCollections}
+                  onClick={() => setIsCollectionsOpened(false)}
                 />
-              ) : null}
+              )}
             </div>
-            <NavButton to={routes.about.path} label={routes.about.label} />
+            <NavButtonLink to={routes.about.path} label={routes.about.label} />
           </div>
           <div className={styles.socialButtons}>
             <img
@@ -136,17 +127,21 @@ const Navbar = ({ routes }) => {
           </div>
         </div>
       </div>
-      {openHamburgerMenu ? (
+      {isHamburgerMenuOpened && (
         <MobileMenu
           fashionStyling={fashionStylingDropdown}
           collections={collectionsDropdown}
           links={mobileMenuList}
-          openMenu={() => setOpenHamburgerMenu(false)}
+          SetIsMenuOpened={() => setIsHamburgerMenuOpened(false)}
           menuBtn={menuBtn}
         />
-      ) : null}
+      )}
     </>
   );
+};
+
+Navbar.propTypes = {
+  routes: PropTypes.object,
 };
 
 export default Navbar;
