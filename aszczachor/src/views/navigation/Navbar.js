@@ -45,8 +45,8 @@ const Navbar = ({ routes }) => {
   useEffect(() => {
     const onBodyClick = ({ target }) => {
       if (
-        (refFashion.current && refFashion.current.contains(target)) ||
-        (refCollections.current && refCollections.current.contains(target))
+        (!refFashion.current && refFashion.current.contains(target)) ||
+        (!refCollections.current && refCollections.current.contains(target))
       ) {
         return;
       }
