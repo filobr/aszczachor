@@ -1,6 +1,6 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import MainContent from "views/mainPage/MainContent";
-import VideoClip from "views/fashionStyling/VideoClip";
+import VideoClip from "views/fashionStyling/VideocClip";
 import Navbar from "components/navigation/Navbar";
 
 const routes = {
