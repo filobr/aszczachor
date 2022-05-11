@@ -23,7 +23,6 @@ const SiteContent = ({ group1, group2, group3 }) => {
         setSelectedGroup(group3);
         break;
       default:
-        console.log("Not speciefied group");
         break;
     }
     setSelectedPhotoIndex(0);
@@ -59,29 +58,29 @@ const SiteContent = ({ group1, group2, group3 }) => {
                 onMouseOver={onPhotoHover}
                 onMouseLeave={onMouseLeave}
               />
-              {isDescriptionOpened && index === Number(isPhotoHovered) ? (
+              {isDescriptionOpened && index === Number(isPhotoHovered) && (
                 <div className={styles.description}>{isPhotoHovered}</div>
-              ) : null}
+              )}
             </div>
           );
         })}
       </div>
-      {isModalOpened ? (
+      {isModalOpened && (
         <Modal
           selected={selectedPhotoIndex}
           photos={selectedGroup}
           setSelected={setSelectedPhotoIndex}
           setIsModalOpened={setIsModalOpened}
         />
-      ) : null}
+      )}
     </>
   );
 };
 
 SiteContent.propTypes = {
-  group1: PropTypes.array,
-  group2: PropTypes.array,
-  group3: PropTypes.array,
+  group1: PropTypes.arrayOf(PropTypes.string),
+  group2: PropTypes.arrayOf(PropTypes.string),
+  group3: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default SiteContent;

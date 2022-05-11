@@ -27,7 +27,7 @@ const MobileMenu = ({
     };
     document.addEventListener("click", onOutsideClick, true);
     return () => document.removeEventListener("click", onOutsideClick, true);
-  });
+  }, [SetIsMenuOpened, menuBtn]);
 
   return (
     <div className={styles.container} ref={ref}>

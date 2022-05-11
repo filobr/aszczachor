@@ -14,11 +14,6 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
     setSelected(selected === 0 ? photos.length - 1 : Number(selected) - 1);
   };
 
-  const closeModal = () => {
-    setIsModalOpened(false);
-    setSelected(null);
-  };
-
   const left = useRef();
   const right = useRef();
   const image = useRef();
@@ -32,11 +27,12 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
       ) {
         return;
       }
-      closeModal();
+      setIsModalOpened(false);
+      setSelected(null);
     };
     document.addEventListener("click", onModalClick, true);
     return () => document.removeEventListener("click", onModalClick, true);
-  });
+  }, [setIsModalOpened, setSelected]);
 
   return (
     <div className={styles.modalContainer}>

@@ -1,4 +1,4 @@
-import styles from "views/fashionStyling/videoclip.module.css";
+import styles from "views/fashionStyling/videoClip.module.css";
 
 const videos = [
   {
@@ -31,7 +31,7 @@ const videos = [
   },
 ];
 
-const Videoclip = () => {
+const VideoClip = () => {
   return (
     <div className={styles.videosContainer}>
       {videos.map(({ path, title }) => (
@@ -47,4 +47,4 @@ const Videoclip = () => {
   );
 };
 
-export default Videoclip;
+export default VideoClip;

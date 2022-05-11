@@ -5,11 +5,7 @@ const importAll = require =>
   }, {});
 
 const images = importAll(
-  require.context(
-    "assets/collections/campaign/leshka",
-    false,
-    /\.(png|jpe?g|svg)$/
-  )
+  require.context("assets/mainPage", false, /\.(png|jpe?g|svg)$/)
 );
 
 console.log(images);
