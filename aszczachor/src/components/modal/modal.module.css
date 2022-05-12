@@ -18,6 +18,9 @@
   flex-direction: row-reverse;
 }
 
+
+
+
 .content {
   width: 100%;
   height: 90%;
@@ -61,4 +64,11 @@
 
 .photo img {
   max-height: 100%;
+}
+
+@media screen and (min-width: 801px) {
+  .top img {
+    width: 30px;
+    height: 30px;
+}
 }

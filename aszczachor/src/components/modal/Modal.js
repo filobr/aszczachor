@@ -2,10 +2,31 @@ import styles from "components/modal/modal.module.css";
 import prevIcon from "assets/modal/prev-icon.png";
 import nextIcon from "assets/modal/next-icon.png";
 import closeIcon from "assets/modal/close-icon.png";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
 const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = ({ targetTouches }) => {
+    setTouchStart(targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = ({ targetTouches }) => {
+    setTouchEnd(targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 150) {
+      nextPhoto();
+    }
+
+    if (touchStart - touchEnd < -150) {
+      prevPhoto();
+    }
+  };
+
   const nextPhoto = () => {
     setSelected(selected === photos.length - 1 ? 0 : Number(selected) + 1);
   };
@@ -44,7 +65,15 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
           <img src={prevIcon} alt="prev" onClick={prevPhoto} ref={left} />
         </div>
         <div className={styles.photo}>
-          <img src={photos[selected]} alt="" onClick={nextPhoto} ref={image} />
+          <img
+            src={photos[selected]}
+            alt=""
+            onClick={nextPhoto}
+            ref={image}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          />
         </div>
         <div className={styles.right}>
           <img src={nextIcon} alt="next" onClick={nextPhoto} ref={right} />
