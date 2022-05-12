@@ -9,7 +9,7 @@ import hamburgerIcon from "assets/mobileMenu/hamburger-menu.png";
 import closeIcon from "assets/mobileMenu/close-icon.png";
 import Dropdown from "components/navigation/Dropdown";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import MobileMenu from "components/navigation/MobileMenu";
 import PropTypes from "prop-types";
 
@@ -38,26 +38,7 @@ const Navbar = ({ routes }) => {
   const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
   const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
   const [isHamburgerMenuOpened, setIsHamburgerMenuOpened] = useState(false);
-  const refFashion = useRef();
   const menuBtn = useRef();
-  const refCollections = useRef();
-
-  useEffect(() => {
-    const onBodyClick = ({ target }) => {
-      if (
-        (!refFashion.current && refFashion.current.contains(target)) ||
-        (!refCollections.current && refCollections.current.contains(target))
-      ) {
-        return;
-      }
-      setIsFashionStylingOpened(false);
-      setIsCollectionsOpened(false);
-    };
-
-    document.addEventListener("click", onBodyClick, true);
-
-    return () => document.removeEventListener("click", onBodyClick, true);
-  }, [setIsFashionStylingOpened, setIsCollectionsOpened]);
 
   return (
     <>
@@ -80,13 +61,15 @@ const Navbar = ({ routes }) => {
         <div className={styles.navigationContainerDesktop}>
           <div className={styles.emptyDiv}></div>
           <div className={styles.buttonBar}>
-            <div className={styles.dropdownMenu} ref={refFashion}>
+            <div
+              className={styles.dropdownMenu}
+              onMouseLeave={() => setIsFashionStylingOpened(false)}
+            >
               <NavButton
                 label="Fashion Styling"
-                onClick={() =>
-                  setIsFashionStylingOpened(!isFashionStylingOpened)
-                }
+                onMouseEnter={() => setIsFashionStylingOpened(true)}
               />
+
               {isFashionStylingOpened && (
                 <Dropdown
                   items={fashionStylingDropdown}
@@ -95,10 +78,13 @@ const Navbar = ({ routes }) => {
               )}
             </div>
 
-            <div className={styles.dropdownMenu} ref={refCollections}>
+            <div
+              className={styles.dropdownMenu}
+              onMouseLeave={() => setIsCollectionsOpened(false)}
+            >
               <NavButton
                 label="Collections"
-                onClick={() => setIsCollectionsOpened(!isCollectionsOpened)}
+                onMouseEnter={() => setIsCollectionsOpened(true)}
               />
               {isCollectionsOpened && (
                 <Dropdown

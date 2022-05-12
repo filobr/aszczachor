@@ -1,9 +1,9 @@
 import styles from "components/navigation/navButton.module.css";
 import PropTypes from "prop-types";
 
-const NavButton = ({ label, onClick }) => {
+const NavButton = ({ label, onMouseEnter }) => {
   return (
-    <span onClick={onClick} className={styles.link}>
+    <span onMouseEnter={onMouseEnter} className={styles.link}>
       {label}
     </span>
   );
@@ -11,7 +11,7 @@ const NavButton = ({ label, onClick }) => {
 
 NavButton.propTypes = {
   label: PropTypes.string,
-  onClick: PropTypes.func,
+  onMouseEnter: PropTypes.func,
 };
 
 export default NavButton;

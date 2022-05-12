@@ -81,6 +81,11 @@
   .navigationContainerDesktop {
     display: none;
   }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  
+  }
   .logo img {
     width: 200px;
     height: 66px;
