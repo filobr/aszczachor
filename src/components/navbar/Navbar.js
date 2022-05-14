@@ -13,14 +13,7 @@ import { useState, useRef } from "react";
 import MobileMenu from "components/mobileMenu/MobileMenu";
 import PropTypes from "prop-types";
 
-const Navbar = ({ routes }) => {
-  const socialPaths = {
-    Facebook:
-      "https://www.facebook.com/Aleksandra-Szcz%C4%85chor-570481960100580",
-    Instagram: "https://www.instagram.com/aleksandra.szczachor/",
-    Email: "mailto:aszczachor@gmail.com",
-  };
-
+const Navbar = ({ routes, socialPaths }) => {
   const fashionStylingDropdown = [
     routes.editorials,
     routes.videoclip,
@@ -124,6 +117,7 @@ const Navbar = ({ routes }) => {
 
 Navbar.propTypes = {
   routes: PropTypes.object,
+  socialPaths: PropTypes.object,
 };
 
 export default Navbar;
