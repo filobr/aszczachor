@@ -1,4 +1,5 @@
 import styles from "views/fashionStyling/videoClip.module.css";
+import { useEffect } from "react";
 
 const videos = [
   {
@@ -32,6 +33,10 @@ const videos = [
 ];
 
 const VideoClip = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={styles.videosContainer}>
       {videos.map(({ path, title }) => (

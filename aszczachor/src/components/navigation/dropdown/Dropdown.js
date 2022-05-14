@@ -1,4 +1,4 @@
-import styles from "components/navigation/dropdown.module.css";
+import styles from "components/navigation/dropdown/dropdown.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 

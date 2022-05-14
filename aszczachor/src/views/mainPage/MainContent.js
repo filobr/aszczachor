@@ -1,6 +1,6 @@
 import styles from "views/mainPage/mainContent.module.css";
 import Modal from "components/modal/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import img1 from "assets/mainPage/mainContent1.jpg";
 import img2 from "assets/mainPage/mainContent2.jpg";
 import img3 from "assets/mainPage/mainContent3.jpg";
@@ -48,6 +48,10 @@ const photos = [
 const MainContent = () => {
   const [selectedPhotoIndex, setSelectedPhotoIndexIndex] = useState(null);
   const [isModalOpened, setIsModalOpened] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const onPhotoClick = ({ currentTarget }) => {
     setSelectedPhotoIndexIndex(Number(currentTarget.dataset.index));
