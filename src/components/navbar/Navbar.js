@@ -1,16 +1,16 @@
-import styles from "components/navigation/navbar.module.css";
+import styles from "components/navbar/navbar.module.css";
 import logo from "assets/logo/logo.jpg";
-import NavButtonLink from "components/navigation/desktop/NavButtonLink";
-import NavButton from "components/navigation/desktop/NavButton";
+import NavButtonLink from "components/navButton/NavButtonLink";
+import NavButton from "components/navButton/NavButton";
 import igIcon from "assets/socialButtons/instagram_icon.png";
 import fbIcon from "assets/socialButtons/facebook_icon.png";
 import mailIcon from "assets/socialButtons/mail_icon.png";
 import hamburgerIcon from "assets/mobileMenu/hamburger-menu.png";
 import closeIcon from "assets/mobileMenu/close-icon.png";
-import Dropdown from "components/navigation/dropdown/Dropdown";
+import Dropdown from "components/dropdown/Dropdown";
 import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
-import MobileMenu from "components/navigation/mobile/MobileMenu";
+import MobileMenu from "components/mobileMenu/MobileMenu";
 import PropTypes from "prop-types";
 
 const Navbar = ({ routes }) => {

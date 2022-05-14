@@ -1,7 +1,7 @@
-import styles from "components/navigation/mobile/mobileMenu.module.css";
+import styles from "components/mobileMenu/mobileMenu.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import ExpandComponent from "components/navigation/mobile/ExpandComponent";
+import ExpandComponent from "components/mobileMenu/ExpandComponent";
 import PropTypes from "prop-types";
 
 const MobileMenu = ({
