@@ -18,11 +18,11 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 150) {
+    if (touchStart - touchEnd > 80) {
       nextPhoto();
     }
 
-    if (touchStart - touchEnd < -150) {
+    if (touchStart - touchEnd < -80) {
       prevPhoto();
     }
   };
@@ -89,7 +89,7 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
 Modal.propTypes = {
   selected: PropTypes.number,
   setSelected: PropTypes.func,
-  photos: PropTypes.array,
+  photos: PropTypes.arrayOf(PropTypes.string),
   setIsModalOpened: PropTypes.func,
 };
 

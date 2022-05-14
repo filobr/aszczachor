@@ -1,4 +1,4 @@
-import styles from "components/navigation/navButton.module.css";
+import styles from "components/navButton/navButton.module.css";
 import PropTypes from "prop-types";
 
 const NavButton = ({ label, onMouseEnter }) => {

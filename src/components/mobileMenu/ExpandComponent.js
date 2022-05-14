@@ -3,7 +3,7 @@ import collapseArrow from "assets/mobileMenu/collapse-arrow.png";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const ExpandButton = ({
+const ExpandComponent = ({
   label,
   changeState,
   isOpened,
@@ -38,12 +38,12 @@ const ExpandButton = ({
   );
 };
 
-ExpandButton.propTypes = {
+ExpandComponent.propTypes = {
   label: PropTypes.string,
   changeState: PropTypes.func,
   isOpened: PropTypes.bool,
-  list: PropTypes.array,
+  list: PropTypes.arrayOf(PropTypes.string),
   SetIsMenuOpened: PropTypes.func,
 };
 
-export default ExpandButton;
+export default ExpandComponent;

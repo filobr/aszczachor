@@ -18,9 +18,6 @@
   flex-direction: row-reverse;
 }
 
-
-
-
 .content {
   width: 100%;
   height: 90%;
@@ -66,7 +63,7 @@
   max-height: 100%;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (max-width: 640px) {
   .top img {
     width: 30px;
     height: 30px;

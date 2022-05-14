@@ -1,7 +1,7 @@
-import styles from "components/navigation/mobileMenu.module.css";
+import styles from "components/mobileMenu/mobileMenu.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import ExpandButton from "./ExpandButton";
+import ExpandComponent from "components/mobileMenu/ExpandComponent";
 import PropTypes from "prop-types";
 
 const MobileMenu = ({
@@ -32,14 +32,14 @@ const MobileMenu = ({
   return (
     <div className={styles.container} ref={ref}>
       <ul>
-        <ExpandButton
+        <ExpandComponent
           label="Fashion Styling"
           changeState={() => setIsFashionStylingOpened(!isFashionStylingOpened)}
           isOpened={isFashionStylingOpened}
           list={fashionStyling}
           SetIsMenuOpened={SetIsMenuOpened}
         />
-        <ExpandButton
+        <ExpandComponent
           label="Collections"
           changeState={() => setIsCollectionsOpened(!isCollectionsOpened)}
           isOpened={isCollectionsOpened}

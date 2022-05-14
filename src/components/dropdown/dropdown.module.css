@@ -3,8 +3,7 @@
   position: fixed;
   background-color: #ffffff;
   text-align: center;
-  border: #dfdfdf solid 2px;
-  border-radius: 10px;
+  box-shadow: 0 0 1em #7a7a7a;
   top: 153px;
 }
 

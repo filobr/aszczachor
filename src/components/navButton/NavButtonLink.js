@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "components/navigation/navButton.module.css";
+import styles from "components/navButton/navButton.module.css";
 import PropTypes from "prop-types";
 
 const NavButtonLink = ({ label, to, onClick }) => {
