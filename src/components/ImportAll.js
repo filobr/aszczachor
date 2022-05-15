@@ -1,11 +1,9 @@
-const importAll = require =>
-  require.keys().reduce((acc, next) => {
-    acc[next.replace("./", "")] = require(next);
-    return acc;
-  }, {});
-
-const images = importAll(
-  require.context("assets/mainPage", false, /\.(png|jpe?g|svg)$/)
-);
-
-console.log(images);
+const importAll = reqItems => {
+  let images = [];
+  for (let ind in reqItems.keys()) {
+    let tempImg = reqItems(reqItems.keys()[ind]);
+    if (!images.includes(tempImg)) images.push(tempImg);
+  }
+  return images;
+};
+export default importAll;
