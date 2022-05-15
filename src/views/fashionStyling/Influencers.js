@@ -2,7 +2,7 @@ import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
 import { useEffect } from "react";
 
-const fagata = importAll(
+const fagataImg = importAll(
   require.context(
     "assets/fashionStyling/influencers/@fagataaa - Agata Fąk",
     false,
@@ -10,7 +10,7 @@ const fagata = importAll(
   )
 );
 
-const natsu = importAll(
+const natsuImg = importAll(
   require.context(
     "assets/fashionStyling/influencers/NATSU - Natalia Karczmarczyk",
     false,
@@ -18,7 +18,7 @@ const natsu = importAll(
   )
 );
 
-const zalewska = importAll(
+const zalewskaImg = importAll(
   require.context(
     "assets/fashionStyling/influencers/@melamodelayt -  Amelia Zalewska",
     false,
@@ -26,12 +26,29 @@ const zalewska = importAll(
   )
 );
 
+const fagata = {
+  photos: fagataImg,
+  description: "@fagataaa - Agata Fąk",
+};
+
+const natsu = {
+  photos: natsuImg,
+  description: "NATSU - Natalia Karczmarczyk",
+};
+
+const zalewska = {
+  photos: zalewskaImg,
+  description: "@melamodelayt - Amelia Zalewska",
+};
+
+const groups = [fagata, natsu, zalewska];
+
 const Influencers = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  return <SiteContent group1={fagata} group2={natsu} group3={zalewska} />;
+  return <SiteContent groups={groups} />;
 };
 
 export default Influencers;
