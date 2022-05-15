@@ -7,7 +7,7 @@ const SiteContent = ({ groups }) => {
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [isDescriptionOpened, setIsDescriptionOpened] = useState(false);
-  const [isPhotoHovered, setIsPhotoHovered] = useState(null);
+  const [hoveredPhoto, setHoveredPhoto] = useState(null);
 
   const mainPhotos = groups.map(group => group.photos[0]);
 
@@ -19,16 +19,16 @@ const SiteContent = ({ groups }) => {
   };
 
   const onPhotoHover = ({ currentTarget }) => {
-    setIsPhotoHovered(currentTarget.dataset.index);
+    setHoveredPhoto(currentTarget.dataset.index);
     setIsDescriptionOpened(true);
   };
 
   const onMouseEnter = ({ currentTarget }) => {
-    setIsPhotoHovered(currentTarget.dataset.index);
+    setHoveredPhoto(currentTarget.dataset.index);
   };
 
   const onMouseLeave = () => {
-    setIsPhotoHovered(null);
+    setHoveredPhoto(null);
     setIsDescriptionOpened(false);
   };
 
@@ -47,10 +47,10 @@ const SiteContent = ({ groups }) => {
                 onMouseOver={onPhotoHover}
                 onMouseLeave={onMouseLeave}
               />
-              {isDescriptionOpened && index === Number(isPhotoHovered) && (
+              {isDescriptionOpened && index === Number(hoveredPhoto) && (
                 <div className={styles.description}>
                   <p style={{ fontWeight: "bold" }}>
-                    {groups[isPhotoHovered].description}
+                    {groups[hoveredPhoto].description}
                   </p>
                   <p>Click me to see more content from this session</p>
                 </div>
