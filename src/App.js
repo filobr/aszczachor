@@ -8,6 +8,7 @@ import Campaign from "views/collections/Campaign";
 import FashionCampaign from "views/fashionStyling/FashionCampaign";
 import FashionEditorials from "views/fashionStyling/FashionEditorials";
 import Editorials from "views/collections/Editorials";
+import Collections from "views/collections/Collections";
 
 const routes = {
   mainPage: {
@@ -74,7 +75,7 @@ const App = () => {
         component={FashionEditorials}
       />
       <Route path={routes.editorials.path} exact component={Editorials} />
-
+      <Route path={routes.collections.path} exact component={Collections} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
   );
