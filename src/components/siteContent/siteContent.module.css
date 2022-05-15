@@ -24,6 +24,11 @@
   margin-left: 10px;
 }
 
+.description p:first-child {
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .container img {
   cursor: pointer;
   width: 100%;
