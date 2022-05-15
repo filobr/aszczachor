@@ -9,6 +9,15 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
+  const handleKeyClick = ({ key }) => {
+    if (key === "ArrowLeft") prevPhoto();
+    else if (key === "ArrowRight") nextPhoto();
+    else if (key === "Escape") {
+      setIsModalOpened(false);
+      setSelected(null);
+    }
+  };
+
   const handleTouchStart = ({ targetTouches }) => {
     setTouchStart(targetTouches[0].clientX);
   };
@@ -38,6 +47,7 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
   const left = useRef();
   const right = useRef();
   const image = useRef();
+  const ref = useRef();
 
   useEffect(() => {
     const onModalClick = ({ target }) => {
@@ -55,8 +65,17 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
     return () => document.removeEventListener("click", onModalClick, true);
   }, [setIsModalOpened, setSelected]);
 
+  useEffect(() => {
+    ref.current.focus();
+  }, []);
+
   return (
-    <div className={styles.modalContainer}>
+    <div
+      className={styles.modalContainer}
+      onKeyDown={handleKeyClick}
+      tabIndex="0"
+      ref={ref}
+    >
       <div className={styles.top}>
         <img src={closeIcon} alt="close" />
       </div>

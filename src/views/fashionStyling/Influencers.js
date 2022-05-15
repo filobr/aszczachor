@@ -1,5 +1,6 @@
 import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
+import { useEffect } from "react";
 
 const fagata = importAll(
   require.context(
@@ -26,6 +27,10 @@ const zalewska = importAll(
 );
 
 const Influencers = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return <SiteContent group1={fagata} group2={natsu} group3={zalewska} />;
 };
 
