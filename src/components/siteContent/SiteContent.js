@@ -46,6 +46,7 @@ const SiteContent = ({ groups, style }) => {
                 onMouseEnter={onMouseEnter}
                 onMouseOver={onPhotoHover}
                 onMouseLeave={onMouseLeave}
+                onTouchStart={onPhotoHover}
               />
               {isDescriptionOpened && index === Number(hoveredPhotoIndex) && (
                 <div className={styles.description}>
