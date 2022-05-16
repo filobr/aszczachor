@@ -46,7 +46,7 @@ const MobileMenu = ({
           list={collections}
           SetIsMenuOpened={SetIsMenuOpened}
         />
-        {links.map(({ path, label }) => (
+        {/* {links.map(({ path, label }) => (
           <Link
             style={{ textDecoration: "none" }}
             to={path}
@@ -57,7 +57,8 @@ const MobileMenu = ({
               <span className={styles.expand}>{label}</span>
             </li>
           </Link>
-        ))}
+        ))} */}
+        {/* TO FIX when about component done */}
       </ul>
     </div>
   );

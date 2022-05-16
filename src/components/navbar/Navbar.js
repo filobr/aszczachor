@@ -87,7 +87,8 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
-            <NavButtonLink to={routes.about.path} label={routes.about.label} />
+            {/* <NavButtonLink to={routes.about.path} label={routes.about.label} /> */}
+            {/* TO FIX when about component done */}
           </div>
           <div className={styles.socialButtons}>
             <img
