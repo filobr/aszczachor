@@ -15,13 +15,17 @@ import PropTypes from "prop-types";
 
 const Navbar = ({ routes, socialPaths }) => {
   const fashionStylingDropdown = [
-    routes.editorials,
+    routes.fashionEditorials,
     routes.videoclip,
     routes.influencers,
-    routes.campaign,
+    routes.fashionCampaign,
   ];
 
-  const collectionsDropdown = [routes.collections, routes.fashionEditorials];
+  const collectionsDropdown = [
+    routes.collections,
+    routes.editorials,
+    routes.campaign,
+  ];
 
   const mobileMenuList = [routes.about];
 

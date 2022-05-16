@@ -2,7 +2,7 @@ import Modal from "components/modal/Modal";
 import { useState } from "react";
 import styles from "components/siteContent/siteContent.module.css";
 import PropTypes from "prop-types";
-const SiteContent = ({ groups }) => {
+const SiteContent = ({ groups, style }) => {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -34,7 +34,7 @@ const SiteContent = ({ groups }) => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} style={style}>
         {mainPhotos.map((photo, index) => {
           return (
             <div key={index} className={styles.photo}>
@@ -71,8 +71,12 @@ const SiteContent = ({ groups }) => {
 
 SiteContent.propTypes = {
   groups: PropTypes.arrayOf(
-    PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string), PropTypes.string)
+    PropTypes.shape({
+      photos: PropTypes.arrayOf(PropTypes.string),
+      description: PropTypes.string,
+    })
   ),
+  style: PropTypes.object,
 };
 
 export default SiteContent;

@@ -4,7 +4,11 @@ import VideoClip from "views/fashionStyling/VideocClip";
 import Navbar from "components/navbar/Navbar";
 import Influencers from "views/fashionStyling/Influencers";
 import FooterMobile from "components/footer/FooterMobile";
-import Campaign from "views/fashionStyling/Campaign";
+import Campaign from "views/collections/Campaign";
+import FashionCampaign from "views/fashionStyling/FashionCampaign";
+import FashionEditorials from "views/fashionStyling/FashionEditorials";
+import Editorials from "views/collections/Editorials";
+import Collections from "views/collections/Collections";
 
 const routes = {
   mainPage: {
@@ -23,6 +27,10 @@ const routes = {
     path: "/influencers",
     label: "Influencers",
   },
+  fashionCampaign: {
+    path: "/fashion-campaign",
+    label: "Campaign",
+  },
   campaign: {
     path: "/campaign",
     label: "Campaign",
@@ -33,7 +41,7 @@ const routes = {
   },
   fashionEditorials: {
     path: "/fashion-editorials",
-    label: "Fashion editorials",
+    label: "Editorials",
   },
   about: {
     path: "/about",
@@ -56,7 +64,18 @@ const App = () => {
       <Route path={routes.videoclip.path} exact component={VideoClip} />
       <Route path={routes.influencers.path} exact component={Influencers} />
       <Route path={routes.campaign.path} exact component={Campaign} />
-
+      <Route
+        path={routes.fashionCampaign.path}
+        exact
+        component={FashionCampaign}
+      />
+      <Route
+        path={routes.fashionEditorials.path}
+        exact
+        component={FashionEditorials}
+      />
+      <Route path={routes.editorials.path} exact component={Editorials} />
+      <Route path={routes.collections.path} exact component={Collections} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
   );
