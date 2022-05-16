@@ -4,6 +4,7 @@ import VideoClip from "views/fashionStyling/VideocClip";
 import Navbar from "components/navbar/Navbar";
 import Influencers from "views/fashionStyling/Influencers";
 import FooterMobile from "components/footer/FooterMobile";
+import Campaign from "views/fashionStyling/Campaign";
 
 const routes = {
   mainPage: {
@@ -54,6 +55,8 @@ const App = () => {
       <Route path={routes.mainPage.path} exact component={MainContent} />
       <Route path={routes.videoclip.path} exact component={VideoClip} />
       <Route path={routes.influencers.path} exact component={Influencers} />
+      <Route path={routes.campaign.path} exact component={Campaign} />
+
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
   );
