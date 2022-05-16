@@ -54,7 +54,7 @@ const MobileMenu = ({
             key={label}
           >
             <li>
-              <span>{label}</span>
+              <span className={styles.expand}>{label}</span>
             </li>
           </Link>
         ))}

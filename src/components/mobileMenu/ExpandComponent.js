@@ -2,6 +2,7 @@ import expandArrow from "assets/mobileMenu/expand-arrow.png";
 import collapseArrow from "assets/mobileMenu/collapse-arrow.png";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import styles from "components/mobileMenu/mobileMenu.module.css";
 
 const ExpandComponent = ({
   label,
@@ -12,8 +13,8 @@ const ExpandComponent = ({
 }) => {
   return (
     <>
-      <li key={label} style={{ marginLeft: "17px" }}>
-        <span onClick={changeState}>
+      <li key={label}>
+        <span className={styles.expand} onClick={changeState}>
           {label}
           <img
             src={isOpened ? collapseArrow : expandArrow}
