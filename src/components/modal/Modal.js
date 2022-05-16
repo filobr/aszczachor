@@ -86,8 +86,7 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
         <div className={styles.photo}>
           <img
             src={photos[selected]}
-            alt=""
-            onClick={nextPhoto}
+            alt={`img${selected}`}
             ref={image}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}

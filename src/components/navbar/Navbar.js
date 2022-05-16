@@ -40,13 +40,17 @@ const Navbar = ({ routes, socialPaths }) => {
         <div className={styles.mobile}>
           <div className={styles.logo}>
             <Link to={routes.mainPage.path}>
-              <img src={logo} alt="" />
+              <img
+                src={logo}
+                alt="logo"
+                onClick={() => window.scrollTo(0, 0)}
+              />
             </Link>
           </div>
           <div className={styles.hamburgerIcon}>
             <img
               src={isHamburgerMenuOpened ? closeIcon : hamburgerIcon}
-              alt=""
+              alt="hamburger"
               onClick={() => setIsHamburgerMenuOpened(!isHamburgerMenuOpened)}
               ref={menuBtn}
             />
