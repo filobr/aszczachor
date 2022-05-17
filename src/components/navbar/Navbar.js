@@ -1,6 +1,5 @@
 import styles from "components/navbar/navbar.module.css";
 import logo from "assets/logo/logo.jpg";
-import NavButtonLink from "components/navButton/NavButtonLink";
 import NavButton from "components/navButton/NavButton";
 import igIcon from "assets/socialButtons/instagram_icon.png";
 import fbIcon from "assets/socialButtons/facebook_icon.png";
@@ -91,8 +90,6 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
-            {/* <NavButtonLink to={routes.about.path} label={routes.about.label} /> */}
-            {/* TO FIX when about component done */}
           </div>
           <div className={styles.socialButtons}>
             <img

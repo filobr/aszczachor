@@ -1,5 +1,4 @@
 import styles from "components/mobileMenu/mobileMenu.module.css";
-import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import ExpandComponent from "components/mobileMenu/ExpandComponent";
 import PropTypes from "prop-types";
@@ -46,19 +45,6 @@ const MobileMenu = ({
           list={collections}
           SetIsMenuOpened={SetIsMenuOpened}
         />
-        {/* {links.map(({ path, label }) => (
-          <Link
-            style={{ textDecoration: "none" }}
-            to={path}
-            onClick={SetIsMenuOpened}
-            key={label}
-          >
-            <li>
-              <span className={styles.expand}>{label}</span>
-            </li>
-          </Link>
-        ))} */}
-        {/* TO FIX when about component done */}
       </ul>
     </div>
   );
