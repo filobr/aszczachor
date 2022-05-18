@@ -72,4 +72,12 @@
     width: 30px;
     height: 30px;
 }
+.left,
+.right {
+  display: none;
+}
+
+.photo {
+  width: 100%;
+}
 }

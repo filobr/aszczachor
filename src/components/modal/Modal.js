@@ -27,11 +27,11 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
   };
 
   const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 80) {
+    if (touchStart - touchEnd > 50) {
       nextPhoto();
     }
 
-    if (touchStart - touchEnd < -80) {
+    if (touchStart - touchEnd < -50) {
       prevPhoto();
     }
   };
