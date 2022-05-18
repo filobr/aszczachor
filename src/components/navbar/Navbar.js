@@ -1,6 +1,5 @@
 import styles from "components/navbar/navbar.module.css";
 import logo from "assets/logo/logo.jpg";
-import NavButtonLink from "components/navButton/NavButtonLink";
 import NavButton from "components/navButton/NavButton";
 import igIcon from "assets/socialButtons/instagram_icon.png";
 import fbIcon from "assets/socialButtons/facebook_icon.png";
@@ -40,13 +39,17 @@ const Navbar = ({ routes, socialPaths }) => {
         <div className={styles.mobile}>
           <div className={styles.logo}>
             <Link to={routes.mainPage.path}>
-              <img src={logo} alt="" />
+              <img
+                src={logo}
+                alt="logo"
+                onClick={() => window.scrollTo(0, 0)}
+              />
             </Link>
           </div>
           <div className={styles.hamburgerIcon}>
             <img
               src={isHamburgerMenuOpened ? closeIcon : hamburgerIcon}
-              alt=""
+              alt="hamburger"
               onClick={() => setIsHamburgerMenuOpened(!isHamburgerMenuOpened)}
               ref={menuBtn}
             />
@@ -87,7 +90,6 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
-            <NavButtonLink to={routes.about.path} label={routes.about.label} />
           </div>
           <div className={styles.socialButtons}>
             <img
