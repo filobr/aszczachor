@@ -1,6 +1,5 @@
 import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
-import { useEffect } from "react";
 
 const fagataImg = importAll(
   require.context(
@@ -44,10 +43,6 @@ const zalewska = {
 const groups = [fagata, natsu, zalewska];
 
 const Influencers = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return <SiteContent groups={groups} />;
 };
 

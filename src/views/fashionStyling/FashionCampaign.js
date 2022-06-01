@@ -1,5 +1,4 @@
 import SiteContent from "components/siteContent/SiteContent";
-import { useEffect } from "react";
 import importAll from "components/ImportAll";
 
 const todoImg = importAll(
@@ -18,10 +17,6 @@ const todo = {
 const groups = [todo];
 
 const FashionCampaign = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return <SiteContent groups={groups} />;
 };
 

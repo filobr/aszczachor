@@ -1,5 +1,4 @@
 import SiteContent from "components/siteContent/SiteContent";
-import { useEffect } from "react";
 import importAll from "components/ImportAll";
 
 const leshkaImg = importAll(
@@ -23,10 +22,6 @@ const papaya = {
 const groups = [leshka, papaya];
 
 const Campaign = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return <SiteContent groups={groups} />;
 };
 
