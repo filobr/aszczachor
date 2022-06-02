@@ -1,6 +1,5 @@
 import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
-import { useEffect, useState } from "react";
 
 const cHeadsImg = importAll(
   require.context(
@@ -146,18 +145,7 @@ const groups = [
 ];
 
 const Editorials = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsMobile(!(document.documentElement.clientWidth > 640));
-  }, []);
-
-  const style = {
-    gridTemplateColumns: isMobile ? "repeat(1, 1fr)" : "repeat(4, 1fr)",
-  };
-
-  return <SiteContent groups={groups} style={style} />;
+  return <SiteContent groups={groups} />;
 };
 
 export default Editorials;

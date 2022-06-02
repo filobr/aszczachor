@@ -1,6 +1,5 @@
 import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
-import { useEffect, useState } from "react";
 
 const cityLifeImg = importAll(
   require.context(
@@ -75,18 +74,7 @@ const lOfficiel = {
 const groups = [cityLife, estela, feroce, lexy, lodz, lOfficiel];
 
 const FashionEditorials = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    setIsMobile(!(document.documentElement.clientWidth > 640));
-  }, []);
-
-  const style = {
-    gridTemplateColumns: isMobile ? "repeat(1, 1fr)" : "repeat(3, 1fr)",
-  };
-
-  return <SiteContent groups={groups} style={style} />;
+  return <SiteContent groups={groups} />;
 };
 
 export default FashionEditorials;
