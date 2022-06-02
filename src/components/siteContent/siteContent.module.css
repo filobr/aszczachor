@@ -4,7 +4,6 @@
   grid-gap: 10px;
   gap: 10px;
   grid-auto-rows: minmax(400px, auto);
-  /* margin-top: 10px; */
 }
 
 .photo {

@@ -16,24 +16,30 @@ const SiteContent = ({ groups }) => {
   }, []);
 
   const setMargin = groupSize => {
-    if (groupSize === 1) {
-      return isMobile ? "0" : "35%";
+    if (isMobile) {
+      return "0";
+    } else if (groupSize === 1) {
+      return "35%";
     } else if (groupSize === 2) {
-      return isMobile ? "0" : "22%";
-    } else if (groupSize === 3 || 6) {
-      return isMobile ? "0" : "5%";
+      return "22%";
+    } else if (groupSize === 3 || groupSize === 6) {
+      return "8%";
     } else {
       return "0";
     }
   };
 
   const setGridTemplate = groupSize => {
-    if (groupSize === 1) {
-      return isMobile ? "repeat(1, 1fr)" : "repeat(1, 1fr)";
+    if (isMobile) {
+      return "repeat(1, 1fr)";
+    } else if (groupSize === 1) {
+      return "repeat(1, 1fr)";
     } else if (groupSize === 2) {
-      return isMobile ? "repeat(1, 1fr)" : "repeat(2, 1fr)";
-    } else if (groupSize === 3 || 6) {
-      return isMobile ? "repeat(1, 1fr)" : "repeat(3, 1fr)";
+      return "repeat(2, 1fr)";
+    } else if (groupSize === 3 || groupSize === 6) {
+      return "repeat(3, 1fr)";
+    } else if (groupSize === 12) {
+      return "repeat(4, 1fr)";
     } else {
       return "repeat(auto-fit, minmax(300px, 1fr))";
     }
