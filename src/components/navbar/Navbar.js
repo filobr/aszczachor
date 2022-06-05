@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import MobileMenu from "components/mobileMenu/MobileMenu";
 import PropTypes from "prop-types";
+import NavButtonLink from "components/navButton/NavButtonLink";
 
 const Navbar = ({ routes, socialPaths }) => {
   const fashionStylingDropdown = [
@@ -90,6 +91,10 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
+            <NavButtonLink
+              label={routes.newCollection.label}
+              to={routes.newCollection.path}
+            />
           </div>
           <div className={styles.socialButtons}>
             <img
