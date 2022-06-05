@@ -1,3 +1,4 @@
+import AboutCollection from "components/aboutCollection/AboutCollection";
 import Banner from "components/banner/Banner";
 import importAll from "components/ImportAll";
 
@@ -6,7 +7,12 @@ const images = importAll(
 );
 
 const NewCollection = () => {
-  return <Banner images={images} />;
+  return (
+    <>
+      <Banner images={images} />
+      <AboutCollection />
+    </>
+  );
 };
 
 export default NewCollection;

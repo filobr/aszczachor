@@ -48,9 +48,9 @@ const routes = {
     path: "/about",
     label: "About",
   },
-  newCollection: {
-    path: "/new-collection",
-    label: "New Collection",
+  faceTime: {
+    path: "/face-time",
+    label: "Face Time Session",
   },
 };
 
@@ -81,7 +81,7 @@ const App = () => {
       />
       <Route path={routes.editorials.path} exact component={Editorials} />
       <Route path={routes.collections.path} exact component={Collections} />
-      <Route path={routes.newCollection.path} exact component={NewCollection} />
+      <Route path={routes.faceTime.path} exact component={NewCollection} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
   );

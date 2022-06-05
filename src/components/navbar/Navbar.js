@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 import { useState, useRef } from "react";
 import MobileMenu from "components/mobileMenu/MobileMenu";
 import PropTypes from "prop-types";
-import NavButtonLink from "components/navButton/NavButtonLink";
 
 const Navbar = ({ routes, socialPaths }) => {
   const fashionStylingDropdown = [
@@ -27,10 +26,13 @@ const Navbar = ({ routes, socialPaths }) => {
     routes.campaign,
   ];
 
+  const newCollectionDropdown = [routes.faceTime];
+
   const mobileMenuList = [routes.about];
 
   const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
   const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
+  const [isNewCollectionOpened, setIsNewCollectionOpened] = useState(false);
   const [isHamburgerMenuOpened, setIsHamburgerMenuOpened] = useState(false);
   const menuBtn = useRef();
 
@@ -91,10 +93,21 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
-            <NavButtonLink
-              label={routes.newCollection.label}
-              to={routes.newCollection.path}
-            />
+            <div
+              className={styles.dropdownMenu}
+              onMouseLeave={() => setIsNewCollectionOpened(false)}
+            >
+              <NavButton
+                label="Home Office Collection"
+                onMouseEnter={() => setIsNewCollectionOpened(true)}
+              />
+              {isNewCollectionOpened && (
+                <Dropdown
+                  items={newCollectionDropdown}
+                  onClick={() => setIsNewCollectionOpened(false)}
+                />
+              )}
+            </div>
           </div>
           <div className={styles.socialButtons}>
             <img
