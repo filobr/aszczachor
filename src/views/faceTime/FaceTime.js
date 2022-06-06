@@ -10,7 +10,7 @@ const imagesBanner = importAll(
 
 const description = "Soon ...";
 
-const NewCollection = () => {
+const FaceTime = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,4 +24,4 @@ const NewCollection = () => {
   );
 };
 
-export default NewCollection;
+export default FaceTime;

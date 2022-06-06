@@ -9,7 +9,7 @@ import FashionCampaign from "views/fashionStyling/FashionCampaign";
 import FashionEditorials from "views/fashionStyling/FashionEditorials";
 import Editorials from "views/collections/Editorials";
 import Collections from "views/collections/Collections";
-import NewCollection from "views/newCollection/NewCollection";
+import FaceTime from "views/faceTime/FaceTime";
 
 const routes = {
   mainPage: {
@@ -81,7 +81,7 @@ const App = () => {
       />
       <Route path={routes.editorials.path} exact component={Editorials} />
       <Route path={routes.collections.path} exact component={Collections} />
-      <Route path={routes.faceTime.path} exact component={NewCollection} />
+      <Route path={routes.faceTime.path} exact component={FaceTime} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
   );

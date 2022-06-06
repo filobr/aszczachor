@@ -4,14 +4,17 @@ import styles from "components/banner/banner.module.css";
 
 const Banner = ({ images }) => {
   const [bannerImageIndex, setBannerImageIndex] = useState(0);
+  const changePhoto = () => {
+    if (bannerImageIndex === images.length - 1) {
+      return setBannerImageIndex(0);
+    } else {
+      return setBannerImageIndex(bannerImageIndex + 1);
+    }
+  };
+
   useEffect(() => {
-    setTimeout(() => {
-      if (bannerImageIndex === images.length - 1) {
-        return setBannerImageIndex(0);
-      } else {
-        return setBannerImageIndex(bannerImageIndex + 1);
-      }
-    }, 3000);
+    const bannerTimeout = setTimeout(changePhoto, 3000);
+    return () => clearTimeout(bannerTimeout);
   }, [bannerImageIndex]);
 
   return (
