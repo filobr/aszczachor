@@ -14,7 +14,9 @@ const Banner = ({ images }) => {
     }, 3000);
   }, [bannerImageIndex]);
 
-  return <img className={styles} src={images[bannerImageIndex]} alt="banner" />;
+  return (
+    <img className={styles.image} src={images[bannerImageIndex]} alt="banner" />
+  );
 };
 
 Banner.propTypes = {

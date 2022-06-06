@@ -89,9 +89,17 @@ const SiteContent = ({ groups }) => {
                 onMouseLeave={onMouseLeave}
                 onTouchStart={onPhotoHover}
               />
-              {isDescriptionOpened && index === Number(hoveredPhotoIndex) && (
+              {isDescriptionOpened &&
+                !isMobile &&
+                index === Number(hoveredPhotoIndex) && (
+                  <div className={styles.description}>
+                    <p>{groups[hoveredPhotoIndex].description}</p>
+                    <p>Click me to see more content from this session</p>
+                  </div>
+                )}
+              {isMobile && (
                 <div className={styles.description}>
-                  <p>{groups[hoveredPhotoIndex].description}</p>
+                  <p>{groups[index].description}</p>
                   <p>Click me to see more content from this session</p>
                 </div>
               )}

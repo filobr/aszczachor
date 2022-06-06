@@ -130,6 +130,7 @@ const Navbar = ({ routes, socialPaths }) => {
         <MobileMenu
           fashionStyling={fashionStylingDropdown}
           collections={collectionsDropdown}
+          newCollection={newCollectionDropdown}
           links={mobileMenuList}
           SetIsMenuOpened={() => setIsHamburgerMenuOpened(false)}
           menuBtn={menuBtn}
