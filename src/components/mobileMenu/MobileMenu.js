@@ -6,12 +6,14 @@ import PropTypes from "prop-types";
 const MobileMenu = ({
   fashionStyling,
   collections,
+  newCollection,
   links,
   SetIsMenuOpened,
   menuBtn,
 }) => {
   const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
   const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
+  const [isNewCollectionOpened, setIsNewCollectionOpened] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -45,6 +47,13 @@ const MobileMenu = ({
           list={collections}
           SetIsMenuOpened={SetIsMenuOpened}
         />
+        <ExpandComponent
+          label="Home Office Collection"
+          changeState={() => setIsNewCollectionOpened(!isNewCollectionOpened)}
+          isOpened={isNewCollectionOpened}
+          list={newCollection}
+          SetIsMenuOpened={SetIsMenuOpened}
+        />
       </ul>
     </div>
   );
@@ -53,6 +62,7 @@ const MobileMenu = ({
 MobileMenu.propTypes = {
   fashionStyling: PropTypes.array,
   collections: PropTypes.array,
+  newCollection: PropTypes.array,
   links: PropTypes.array,
   SetIsMenuOpened: PropTypes.func,
   menuBtn: PropTypes.object,

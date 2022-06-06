@@ -43,7 +43,7 @@ ExpandComponent.propTypes = {
   label: PropTypes.string,
   changeState: PropTypes.func,
   isOpened: PropTypes.bool,
-  list: PropTypes.arrayOf(PropTypes.string),
+  list: PropTypes.arrayOf(PropTypes.object),
   SetIsMenuOpened: PropTypes.func,
 };
 

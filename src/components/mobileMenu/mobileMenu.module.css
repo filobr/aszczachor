@@ -23,12 +23,11 @@
 .container ul li span {
   display: block;
   color: #000000;
-  font-family: arial;
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
   background-color: #ffffff;
-  padding: 5px;
+  padding: 8px;
   text-transform: uppercase;
   border: none;
   width: 100%;

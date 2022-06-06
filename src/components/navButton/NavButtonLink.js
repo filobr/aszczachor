@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import styles from "components/navButton/navButton.module.css";
 import PropTypes from "prop-types";
 
-const NavButtonLink = ({ label, to, onClick }) => {
+const NavButtonLink = ({ label, to }) => {
   return (
-    <Link style={{ textDecoration: "none" }} to={to} onClick={onClick}>
+    <Link style={{ textDecoration: "none" }} to={to}>
       <span className={styles.link}>{label}</span>
     </Link>
   );

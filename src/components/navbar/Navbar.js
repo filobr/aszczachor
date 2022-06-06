@@ -26,10 +26,13 @@ const Navbar = ({ routes, socialPaths }) => {
     routes.campaign,
   ];
 
+  const newCollectionDropdown = [routes.faceTime];
+
   const mobileMenuList = [routes.about];
 
   const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
   const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
+  const [isNewCollectionOpened, setIsNewCollectionOpened] = useState(false);
   const [isHamburgerMenuOpened, setIsHamburgerMenuOpened] = useState(false);
   const menuBtn = useRef();
 
@@ -90,6 +93,21 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
+            <div
+              className={styles.dropdownMenu}
+              onMouseLeave={() => setIsNewCollectionOpened(false)}
+            >
+              <NavButton
+                label="Home Office Collection"
+                onMouseEnter={() => setIsNewCollectionOpened(true)}
+              />
+              {isNewCollectionOpened && (
+                <Dropdown
+                  items={newCollectionDropdown}
+                  onClick={() => setIsNewCollectionOpened(false)}
+                />
+              )}
+            </div>
           </div>
           <div className={styles.socialButtons}>
             <img
@@ -112,6 +130,7 @@ const Navbar = ({ routes, socialPaths }) => {
         <MobileMenu
           fashionStyling={fashionStylingDropdown}
           collections={collectionsDropdown}
+          newCollection={newCollectionDropdown}
           links={mobileMenuList}
           SetIsMenuOpened={() => setIsHamburgerMenuOpened(false)}
           menuBtn={menuBtn}
