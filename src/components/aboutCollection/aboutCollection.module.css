@@ -39,4 +39,7 @@
     width: 30px;
     height: 30px;
   }
+  .container {
+    margin: 20px 0;
+  }
 }
