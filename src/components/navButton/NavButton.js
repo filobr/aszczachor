@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 
 const NavButton = ({ label, onMouseEnter }) => {
   return (
-    <span onMouseEnter={onMouseEnter} className={styles.link}>
+    <span
+      onMouseEnter={onMouseEnter}
+      className={
+        label === "Home Office Collection" ? styles.newCollection : styles.link
+      }
+    >
       {label}
     </span>
   );
