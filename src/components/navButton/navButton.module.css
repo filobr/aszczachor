@@ -1,3 +1,11 @@
+@keyframes skew {
+  0% {
+    transform: skewX(25deg);
+  }
+  100% {
+    transform: skewX(-25deg);
+  }
+}
 .link {
   display: block;
   color: #000000;
@@ -5,11 +13,26 @@
   font-size: 14px;
   cursor: pointer;
   background-color: #ffffff;
-  padding: 15px 35px;
+  padding: 16px 35px;
   text-transform: uppercase;
   border: none;
 }
 
 .link:hover {
   color: #f2de5f;
+}
+
+.newCollection {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #ffffff;
+  padding: 16px 35px;
+  text-transform: uppercase;
+  border: none;
+  color: #e00070;
+  animation: skew 1s infinite;
+  transform: skew(25deg);
+  animation-direction: alternate;
 }
