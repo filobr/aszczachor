@@ -24,6 +24,7 @@ const Navbar = ({ routes, socialPaths }) => {
     routes.collections,
     routes.editorials,
     routes.campaign,
+    routes.collectionVideoClip,
   ];
 
   const newCollectionDropdown = [routes.faceTime];
