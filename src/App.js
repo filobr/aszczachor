@@ -11,6 +11,7 @@ import Editorials from "views/collections/Editorials";
 import Collections from "views/collections/Collections";
 import FaceTime from "views/faceTime/FaceTime";
 import CollectionVideoClip from "views/collections/VideoClip";
+import About from "views/about/About";
 
 const routes = {
   mainPage: {
@@ -92,6 +93,7 @@ const App = () => {
         component={CollectionVideoClip}
       />
       <Route path={routes.faceTime.path} exact component={FaceTime} />
+      <Route path={routes.about.path} exact component={About} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
   );

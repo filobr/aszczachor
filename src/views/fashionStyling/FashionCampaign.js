@@ -11,7 +11,7 @@ const todoImg = importAll(
 
 const todo = {
   photos: todoImg,
-  description: "TODO - socks",
+  description: "Todo Socks - Wero Wysoczyńska's assistant",
 };
 
 const groups = [todo];
