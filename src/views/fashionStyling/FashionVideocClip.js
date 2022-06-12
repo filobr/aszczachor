@@ -1,5 +1,4 @@
-import styles from "views/fashionStyling/videoClip.module.css";
-import { useEffect } from "react";
+import VideoClip from "components/videoClip/VideoClip";
 
 const videos = [
   {
@@ -32,24 +31,8 @@ const videos = [
   },
 ];
 
-const VideoClip = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <div className={styles.videosContainer}>
-      {videos.map(({ path, title }) => (
-        <iframe
-          key={title}
-          src={path}
-          title={title}
-          frameBorder="0"
-          allowFullScreen
-        />
-      ))}
-    </div>
-  );
+const FashionVideoClip = () => {
+  return <VideoClip videos={videos} />;
 };
 
-export default VideoClip;
+export default FashionVideoClip;
