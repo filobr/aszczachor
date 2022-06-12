@@ -2,6 +2,7 @@ import styles from "components/mobileMenu/mobileMenu.module.css";
 import { useState, useEffect, useRef } from "react";
 import ExpandComponent from "components/mobileMenu/ExpandComponent";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const MobileMenu = ({
   fashionStyling,
@@ -54,6 +55,18 @@ const MobileMenu = ({
           list={newCollection}
           SetIsMenuOpened={SetIsMenuOpened}
         />
+        {links.map(({ label, path }) => (
+          <Link
+            style={{ textDecoration: "none" }}
+            to={path}
+            onClick={SetIsMenuOpened}
+            key={label}
+          >
+            <li>
+              <span>{label}</span>
+            </li>
+          </Link>
+        ))}
       </ul>
     </div>
   );

@@ -20,7 +20,7 @@ const elleImg = importAll(
 
 const elle = {
   photos: elleImg,
-  description: "Elle",
+  description: "ELLE Ukraine",
 };
 
 const fishAndChipsImg = importAll(
@@ -33,7 +33,7 @@ const fishAndChipsImg = importAll(
 
 const fishAndChips = {
   photos: fishAndChipsImg,
-  description: "Fish and Chips",
+  description: "Editorial - Fish and Chips",
 };
 
 const gmaroImg = importAll(
@@ -68,7 +68,7 @@ const dumaImg = importAll(
 
 const duma = {
   photos: dumaImg,
-  description: "Magazyn DUMA",
+  description: "DUMA Magazine",
 };
 
 const malvieImg = importAll(
@@ -99,7 +99,7 @@ const sandraDorszImg = importAll(
 
 const sandraDorsz = {
   photos: sandraDorszImg,
-  description: "Sandra Dorsz",
+  description: "Session with Sandra Dorsz",
 };
 
 const solsticeImg = importAll(
@@ -117,7 +117,7 @@ const tearSheetsImg = importAll(
 
 const tearSheets = {
   photos: tearSheetsImg,
-  description: "Tear Sheets",
+  description: "Assuré Magazine",
 };
 
 const topModelImg = importAll(

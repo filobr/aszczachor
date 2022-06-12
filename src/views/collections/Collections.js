@@ -11,7 +11,7 @@ const girlsJustWannaLBImg = importAll(
 
 const girlsJustWannaLB = {
   photos: girlsJustWannaLBImg,
-  description: "Look book - Girls Just Wanna…",
+  description: "Look Book - Girls just wanna...",
 };
 
 const girlsJustWannaWizImg = importAll(
@@ -24,7 +24,7 @@ const girlsJustWannaWizImg = importAll(
 
 const girlsJustWannaWiz = {
   photos: girlsJustWannaWizImg,
-  description: "Sesja wizerunkowa - Girls Just Wanna…",
+  description: "Image session - Girls just wanna...",
 };
 
 const groups = [girlsJustWannaLB, girlsJustWannaWiz];

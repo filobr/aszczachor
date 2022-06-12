@@ -11,7 +11,7 @@ const cityLifeImg = importAll(
 
 const cityLife = {
   photos: cityLifeImg,
-  description: "City-life",
+  description: "GMARO Magazine - City Life",
 };
 
 const estelaImg = importAll(
@@ -20,7 +20,7 @@ const estelaImg = importAll(
 
 const estela = {
   photos: estelaImg,
-  description: "Estela magazine",
+  description: "Editorial - No photography",
 };
 
 const feroceImg = importAll(
@@ -33,7 +33,7 @@ const feroceImg = importAll(
 
 const feroce = {
   photos: feroceImg,
-  description: "Feroce magazine",
+  description: "Feroce Magazine - DOMINATED",
 };
 
 const lexyImg = importAll(
@@ -46,7 +46,7 @@ const lexyImg = importAll(
 
 const lexy = {
   photos: lexyImg,
-  description: "lexy-marta-panczyk",
+  description: "Editorial - OK BOOMER",
 };
 
 const lodzImg = importAll(
@@ -55,7 +55,7 @@ const lodzImg = importAll(
 
 const lodz = {
   photos: lodzImg,
-  description: "Łódź",
+  description: "Editorial - Pure Light",
 };
 
 const lOfficielImg = importAll(
@@ -68,7 +68,7 @@ const lOfficielImg = importAll(
 
 const lOfficiel = {
   photos: lOfficielImg,
-  description: "lOfficiel magazine",
+  description: "L'Officiel Baltic",
 };
 
 const groups = [cityLife, estela, feroce, lexy, lodz, lOfficiel];
