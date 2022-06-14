@@ -57,7 +57,7 @@ const MobileMenu = ({
         />
         {links.map(({ label, path }) => (
           <Link
-            style={{ textDecoration: "none" }}
+            style={{ textDecoration: "none", fontWeight: "bold" }}
             to={path}
             onClick={SetIsMenuOpened}
             key={label}

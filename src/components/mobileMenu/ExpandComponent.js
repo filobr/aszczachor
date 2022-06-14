@@ -14,7 +14,14 @@ const ExpandComponent = ({
   return (
     <>
       <li key={label}>
-        <span className={styles.expandTab} onClick={changeState}>
+        <span
+          className={
+            label === "Home Office Collection"
+              ? styles.newCollection
+              : styles.expandTab
+          }
+          onClick={changeState}
+        >
           {label}
           <img
             src={isOpened ? collapseArrow : expandArrow}

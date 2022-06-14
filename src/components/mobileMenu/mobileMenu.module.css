@@ -1,3 +1,12 @@
+@keyframes skew {
+  0% {
+    transform: skewX(25deg);
+  }
+  100% {
+    transform: skewX(-25deg);
+  }
+}
+
 .container {
   width: 100%;
   display: flex;
@@ -47,6 +56,16 @@
   margin-right: 17px;
   font-weight: bold;
 }
+
+.newCollection {
+  margin-right: 17px;
+  font-weight: bold;
+  color: #e00070 !important;
+  animation: skew 1s infinite;
+  transform: skew(25deg);
+  animation-direction: alternate;
+}
+
 
 @media screen and (min-width: 801px) {
   .container {

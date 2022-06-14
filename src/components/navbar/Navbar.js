@@ -95,7 +95,7 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
-            {/* <div
+            <div
               className={styles.dropdownMenu}
               onMouseLeave={() => setIsNewCollectionOpened(false)}
             >
@@ -109,7 +109,7 @@ const Navbar = ({ routes, socialPaths }) => {
                   onClick={() => setIsNewCollectionOpened(false)}
                 />
               )}
-            </div> */}
+            </div>
             <NavButtonLink label={routes.about.label} to={routes.about.path} />
           </div>
           <div className={styles.socialButtons}>
