@@ -73,14 +73,14 @@ const About = () => {
       <div className={styles.text}>
         {text.map(item => {
           return (
-            <div className={styles.textBox}>
+            <div className={styles.textBox} key={item}>
               <span>{item}</span>
             </div>
           );
         })}
         {links.map(link => {
           return (
-            <div className={styles.link}>
+            <div className={styles.link} key={link.label}>
               <a href={link.path} target="_blank" rel="noreferrer noopener">
                 {link.label}
               </a>
