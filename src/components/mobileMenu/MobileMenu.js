@@ -1,8 +1,8 @@
-import styles from "components/mobileMenu/mobileMenu.module.css";
 import { useState, useEffect, useRef } from "react";
-import ExpandComponent from "components/mobileMenu/ExpandComponent";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import ExpandComponent from "components/mobileMenu/ExpandComponent";
+import styles from "components/mobileMenu/mobileMenu.module.css";
 
 const MobileMenu = ({
   fashionStyling,

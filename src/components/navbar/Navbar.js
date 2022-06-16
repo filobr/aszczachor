@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
+import PropTypes from "prop-types";
 import styles from "components/navbar/navbar.module.css";
 import logo from "assets/logo/logo.jpg";
 import NavButton from "components/navButton/NavButton";
@@ -7,10 +10,8 @@ import mailIcon from "assets/socialButtons/mail_icon.png";
 import hamburgerIcon from "assets/mobileMenu/hamburger-menu.png";
 import closeIcon from "assets/mobileMenu/close-icon.png";
 import Dropdown from "components/dropdown/Dropdown";
-import { Link } from "react-router-dom";
-import { useState, useRef } from "react";
+
 import MobileMenu from "components/mobileMenu/MobileMenu";
-import PropTypes from "prop-types";
 import NavButtonLink from "components/navButton/NavButtonLink";
 
 const Navbar = ({ routes, socialPaths }) => {
@@ -71,7 +72,6 @@ const Navbar = ({ routes, socialPaths }) => {
                 label="Fashion Styling"
                 onMouseEnter={() => setIsFashionStylingOpened(true)}
               />
-
               {isFashionStylingOpened && (
                 <Dropdown
                   items={fashionStylingDropdown}
@@ -79,7 +79,6 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
-
             <div
               className={styles.dropdownMenu}
               onMouseLeave={() => setIsCollectionsOpened(false)}

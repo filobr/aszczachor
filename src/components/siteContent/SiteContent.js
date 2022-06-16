@@ -1,7 +1,8 @@
-import Modal from "components/modal/Modal";
 import { useState, useEffect } from "react";
-import styles from "components/siteContent/siteContent.module.css";
 import PropTypes from "prop-types";
+import Modal from "components/modal/Modal";
+import styles from "components/siteContent/siteContent.module.css";
+
 const SiteContent = ({ groups }) => {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);

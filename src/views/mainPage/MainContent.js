@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import styles from "views/mainPage/mainContent.module.css";
 import Modal from "components/modal/Modal";
-import { useState, useEffect } from "react";
 import importAll from "components/ImportAll";
 
 const photos = importAll(require.context("assets/mainPage", false, /\.(jpg)$/));

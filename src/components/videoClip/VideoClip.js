@@ -1,6 +1,6 @@
-import styles from "components/videoClip/videoClip.module.css";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import styles from "components/videoClip/videoClip.module.css";
 
 const VideoClip = ({ videos }) => {
   useEffect(() => {
