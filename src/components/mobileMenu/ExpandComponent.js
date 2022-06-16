@@ -1,8 +1,8 @@
-import expandArrow from "assets/mobileMenu/expand-arrow.png";
-import collapseArrow from "assets/mobileMenu/collapse-arrow.png";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import styles from "components/mobileMenu/mobileMenu.module.css";
+import expandArrow from "assets/mobileMenu/expand-arrow.png";
+import collapseArrow from "assets/mobileMenu/collapse-arrow.png";
 
 const ExpandComponent = ({
   label,

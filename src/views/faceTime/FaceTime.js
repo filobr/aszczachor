@@ -1,8 +1,8 @@
+import { useEffect } from "react";
 import AboutCollection from "components/aboutCollection/AboutCollection";
 import Banner from "components/banner/Banner";
 import SiteContent from "components/siteContent/SiteContent";
 import importAll from "components/ImportAll";
-import { useEffect } from "react";
 
 const imagesBanner = importAll(
   require.context("assets/newCollection/Banner", false, /\.(png)$/)

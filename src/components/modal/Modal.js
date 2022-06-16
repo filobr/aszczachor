@@ -1,9 +1,9 @@
+import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 import styles from "components/modal/modal.module.css";
 import prevIcon from "assets/modal/prev-icon.png";
 import nextIcon from "assets/modal/next-icon.png";
 import closeIcon from "assets/modal/close-icon.png";
-import { useEffect, useRef, useState } from "react";
-import PropTypes from "prop-types";
 
 const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
   const [touchStart, setTouchStart] = useState(0);

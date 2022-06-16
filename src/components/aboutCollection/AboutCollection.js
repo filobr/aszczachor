@@ -1,7 +1,7 @@
+import { useState } from "react";
 import collapseArrow from "assets/newCollection/arrows/collapse.png";
 import expandArrow from "assets/newCollection/arrows/expand.png";
 import styles from "components/aboutCollection/aboutCollection.module.css";
-import { useState } from "react";
 
 const AboutCollection = ({ description }) => {
   const [isDescriptionOpened, setIsDescriptionOpened] = useState(false);

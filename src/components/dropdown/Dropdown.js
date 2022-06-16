@@ -1,6 +1,6 @@
-import styles from "components/dropdown/dropdown.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import styles from "components/dropdown/dropdown.module.css";
 
 const Dropdown = ({ items, onClick }) => {
   return (
