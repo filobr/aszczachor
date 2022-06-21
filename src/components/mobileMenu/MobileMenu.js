@@ -8,6 +8,7 @@ const MobileMenu = ({
   fashionStyling,
   collections,
   newCollection,
+  photography,
   links,
   SetIsMenuOpened,
   menuBtn,
@@ -15,6 +16,7 @@ const MobileMenu = ({
   const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
   const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
   const [isNewCollectionOpened, setIsNewCollectionOpened] = useState(false);
+  const [isPhotographyOpened, setIsPhotographyOpened] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -55,6 +57,13 @@ const MobileMenu = ({
           list={newCollection}
           SetIsMenuOpened={SetIsMenuOpened}
         />
+        <ExpandComponent
+          label="Photography"
+          changeState={() => setIsPhotographyOpened(!isPhotographyOpened)}
+          isOpened={isPhotographyOpened}
+          list={photography}
+          SetIsMenuOpened={SetIsMenuOpened}
+        />
         {links.map(({ label, path }) => (
           <Link
             style={{ textDecoration: "none", fontWeight: "bold" }}
@@ -73,10 +82,11 @@ const MobileMenu = ({
 };
 
 MobileMenu.propTypes = {
-  fashionStyling: PropTypes.array,
-  collections: PropTypes.array,
-  newCollection: PropTypes.array,
-  links: PropTypes.array,
+  fashionStyling: PropTypes.arrayOf(PropTypes.object),
+  collections: PropTypes.arrayOf(PropTypes.object),
+  newCollection: PropTypes.arrayOf(PropTypes.object),
+  photography: PropTypes.arrayOf(PropTypes.object),
+  links: PropTypes.PropTypes.arrayOf(PropTypes.object),
   SetIsMenuOpened: PropTypes.func,
   menuBtn: PropTypes.object,
 };
