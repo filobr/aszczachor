@@ -1,6 +1,6 @@
 import { useState } from "react";
 import importAll from "components/ImportAll";
-import styles from "views/photography/portraits.module.css";
+import styles from "views/photography/portraits/portraits.module.css";
 import Modal from "components/modal/Modal";
 
 const portraitsImg = importAll(

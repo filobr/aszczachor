@@ -1,6 +1,6 @@
 import { useState } from "react";
 import importAll from "components/ImportAll";
-import styles from "views/photography/streetPhotography.module.css";
+import styles from "views/photography/streetPhotography/streetPhotography.module.css";
 import Modal from "components/modal/Modal";
 
 const streetImg = importAll(
