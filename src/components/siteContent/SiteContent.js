@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Modal from "components/modal/Modal";
 import styles from "components/siteContent/siteContent.module.css";
 
-const SiteContent = ({ groups }) => {
+const SiteContent = ({ groups, twoColumns }) => {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -19,6 +19,8 @@ const SiteContent = ({ groups }) => {
   const setMargin = groupSize => {
     if (isMobile) {
       return "0";
+    } else if (twoColumns) {
+      return "0";
     } else if (groupSize === 1) {
       return "35%";
     } else if (groupSize === 2) {
@@ -33,6 +35,8 @@ const SiteContent = ({ groups }) => {
   const setGridTemplate = groupSize => {
     if (isMobile) {
       return "repeat(1, 1fr)";
+    } else if (twoColumns) {
+      return "repeat(2, 1fr)";
     } else if (groupSize === 1) {
       return "repeat(1, 1fr)";
     } else if (groupSize === 2) {
@@ -127,7 +131,7 @@ SiteContent.propTypes = {
       description: PropTypes.string,
     })
   ),
-  style: PropTypes.object,
+  twoColumns: PropTypes.bool,
 };
 
 export default SiteContent;

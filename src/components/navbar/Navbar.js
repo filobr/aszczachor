@@ -36,6 +36,7 @@ const Navbar = ({ routes, socialPaths }) => {
     routes.products,
     routes.portraits,
     routes.streetPhotography,
+    routes.reportage,
   ];
 
   const mobileMenuList = [routes.about];

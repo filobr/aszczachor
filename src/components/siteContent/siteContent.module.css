@@ -34,3 +34,12 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 720px) {
+  .container {
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .container img {
+    object-fit: contain;
+  }
+}

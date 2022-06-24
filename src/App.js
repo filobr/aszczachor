@@ -14,8 +14,9 @@ import CollectionVideoClip from "views/collections/VideoClip";
 import About from "views/about/About";
 import FashionPhotography from "views/photography/FashionPhotography";
 import Products from "views/photography/Products";
-import Portraits from "views/photography/Portraits";
-import StreetPhotography from "views/photography/StreetPhotography";
+import Portraits from "views/photography/portraits/Portraits";
+import StreetPhotography from "views/photography/streetPhotography/StreetPhotography";
+import Reportage from "views/photography/Reportage";
 
 const routes = {
   mainPage: {
@@ -78,6 +79,10 @@ const routes = {
     path: "/street-photography",
     label: "Street Photography",
   },
+  reportage: {
+    path: "/reportage",
+    label: "Reportage",
+  },
 };
 
 const socialPaths = {
@@ -125,6 +130,7 @@ const App = () => {
         exact
         component={StreetPhotography}
       />
+      <Route path={routes.reportage.path} exact component={Reportage} />
       <Route path={routes.about.path} exact component={About} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>
