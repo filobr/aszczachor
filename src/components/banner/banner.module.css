@@ -1,4 +1,8 @@
 .image {
   width: 100%;
-  margin-top: 10px;
+}
+
+.imageBottom {
+  width: 100%;
+  margin-top: 200px;
 }

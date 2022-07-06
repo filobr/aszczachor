@@ -67,7 +67,11 @@ const FaceTime = () => {
       <Banner images={imagesBanner} />
       <AboutCollection description={description} />
       <SiteContent groups={groups} />
-      <img src={bannerBottom} alt="banner-bottom" className={styles.image} />
+      <img
+        src={bannerBottom}
+        alt="banner-bottom"
+        className={styles.imageBottom}
+      />
     </>
   );
 };
