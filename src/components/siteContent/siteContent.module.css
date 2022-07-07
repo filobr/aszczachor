@@ -17,6 +17,13 @@
   bottom: 0;
   left: 0;
   color: #ffffff;
+  cursor: pointer;
+  display: none;
+}
+
+.photo:hover
+.description {
+  display: block;
 }
 
 .description p {
@@ -41,5 +48,8 @@
   }
   .container img {
     object-fit: contain;
+  }
+  .description {
+    display: block;
   }
 }

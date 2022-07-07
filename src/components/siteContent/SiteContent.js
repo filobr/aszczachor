@@ -7,8 +7,6 @@ const SiteContent = ({ groups, twoColumns }) => {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [isModalOpened, setIsModalOpened] = useState(false);
-  const [isDescriptionOpened, setIsDescriptionOpened] = useState(false);
-  const [hoveredPhotoIndex, setHoveredPhotoIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -56,55 +54,37 @@ const SiteContent = ({ groups, twoColumns }) => {
     gridTemplateColumns: setGridTemplate(groups.length),
   };
 
-  const mainPhotos = groups.map(group => group.photos[0]);
-
   const onPhotoClick = ({ currentTarget }) => {
     setSelectedGroup(groups[currentTarget.dataset.index]);
     setSelectedPhotoIndex(0);
     setIsModalOpened(true);
   };
 
-  const onPhotoHover = ({ currentTarget }) => {
-    setHoveredPhotoIndex(currentTarget.dataset.index);
-    setIsDescriptionOpened(true);
-  };
-
-  const onMouseEnter = ({ currentTarget }) => {
-    setHoveredPhotoIndex(currentTarget.dataset.index);
-  };
-
-  const onMouseLeave = () => {
-    setHoveredPhotoIndex(null);
-    setIsDescriptionOpened(false);
-  };
-
   return (
     <>
       <div className={styles.container} style={style}>
-        {mainPhotos.map((photo, index) => {
+        {groups.map(({ photos, description }, index) => {
           return (
-            <div key={index} className={styles.photo}>
+            <div
+              key={index}
+              className={styles.photo}
+              data-index={index}
+              onClick={onPhotoClick}
+            >
               <img
-                src={photo}
+                src={photos[0]}
                 data-index={index}
                 alt={`Img number ${index + 1}`}
-                onClick={onPhotoClick}
-                onMouseEnter={onMouseEnter}
-                onMouseOver={onPhotoHover}
-                onMouseLeave={onMouseLeave}
-                onTouchStart={onPhotoHover}
               />
-              {isDescriptionOpened &&
-                !isMobile &&
-                index === Number(hoveredPhotoIndex) && (
-                  <div className={styles.description}>
-                    <p>{groups[hoveredPhotoIndex].description}</p>
-                    <p>Click me to see more content from this session</p>
-                  </div>
-                )}
-              {isMobile && (
+              {!isMobile && (
                 <div className={styles.description}>
-                  <p>{groups[index].description}</p>
+                  <p>{description}</p>
+                  <p>Click me to see more content from this session</p>
+                </div>
+              )}
+              {isMobile && (
+                <div className={styles.description} onClick={onPhotoClick}>
+                  <p>{description}</p>
                   <p>Click me to see more content from this session</p>
                 </div>
               )}

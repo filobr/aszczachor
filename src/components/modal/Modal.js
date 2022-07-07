@@ -55,9 +55,9 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
         (image.current && image.current.contains(target)) ||
         (left.current && left.current.contains(target)) ||
         (right.current && right.current.contains(target))
-      ) {
+      )
         return;
-      }
+
       setIsModalOpened(false);
       setSelected(null);
     };
