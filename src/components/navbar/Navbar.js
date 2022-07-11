@@ -29,7 +29,7 @@ const Navbar = ({ routes, socialPaths }) => {
     routes.collectionVideoClip,
   ];
 
-  const newCollectionDropdown = [routes.faceTime];
+  const newCollectionDropdown = [routes.faceTime, routes.videoAndLookBook];
 
   const fashionPhotographyDropdown = [
     routes.fashionPhotography,
