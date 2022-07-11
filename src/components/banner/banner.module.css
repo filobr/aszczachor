@@ -4,5 +4,11 @@
 
 .imageBottom {
   width: 100%;
-  margin-top: 200px;
+  margin-top: 8vw;
+}
+
+@media screen and (max-width: 640px) {
+  .imageBottom {
+    margin-top: 10px;
+  }
 }

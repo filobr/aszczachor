@@ -10,7 +10,15 @@ const AboutCollection = ({ description }) => {
     <div className={styles.container}>
       <span className={styles.header}>ABOUT THE PROJECT</span>
       {isDescriptionOpened && (
-        <span className={styles.description}>{description}</span>
+        <div className={styles.text}>
+          {description.map(item => {
+            return (
+              <div className={styles.textBox} key={item}>
+                <span>{item}</span>
+              </div>
+            );
+          })}
+        </div>
       )}
       <img
         src={isDescriptionOpened ? collapseArrow : expandArrow}

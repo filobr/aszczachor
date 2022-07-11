@@ -9,7 +9,7 @@ import FashionCampaign from "views/fashionStyling/FashionCampaign";
 import FashionEditorials from "views/fashionStyling/FashionEditorials";
 import Editorials from "views/collections/Editorials";
 import Collections from "views/collections/Collections";
-import FaceTime from "views/faceTime/FaceTime";
+import FaceTime from "views/homeOffice/FaceTime";
 import CollectionVideoClip from "views/collections/VideoClip";
 import About from "views/about/About";
 import FashionPhotography from "views/photography/FashionPhotography";

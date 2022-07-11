@@ -27,6 +27,17 @@
   cursor: pointer;
 }
 
+.text {
+  width: 80%;
+}
+
+.textBox {
+  margin-top: 20px;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
 @media screen and (max-width: 640px) {
   .description {
     margin-top: 10px;
