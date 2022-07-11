@@ -17,6 +17,7 @@ import Products from "views/photography/Products";
 import Portraits from "views/photography/portraits/Portraits";
 import StreetPhotography from "views/photography/streetPhotography/StreetPhotography";
 import Reportage from "views/photography/Reportage";
+import VideoAndLookBook from "views/homeOffice/VideoAndLookBook";
 
 const routes = {
   mainPage: {
@@ -58,6 +59,10 @@ const routes = {
   faceTime: {
     path: "/face-time",
     label: "Face Time Session",
+  },
+  videoAndLookBook: {
+    path: "/video-and-look-book",
+    label: "Video & Look Book",
   },
   collectionVideoClip: {
     path: "/videoClip-collections",
@@ -118,6 +123,11 @@ const App = () => {
         component={CollectionVideoClip}
       />
       <Route path={routes.faceTime.path} exact component={FaceTime} />
+      <Route
+        path={routes.videoAndLookBook.path}
+        exact
+        component={VideoAndLookBook}
+      />
       <Route
         path={routes.fashionPhotography.path}
         exact
