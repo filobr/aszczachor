@@ -1,5 +1,6 @@
 import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
+import Video from "components/video/Video";
 
 const group1Img = importAll(
   require.context(
@@ -75,8 +76,16 @@ const group6 = {
 
 const groups = [group1, group2, group3, group4, group5, group6];
 
+const videoSrc =
+  "https://drive.google.com/uc?export=view&id=1HVQ8hohfJU2rNLgwWX3Rg5HkPfJ8cu5Y";
+
 const VideoAndLookBook = () => {
-  return <SiteContent groups={groups} />;
+  return (
+    <>
+      <Video videoSrc={videoSrc} />
+      <SiteContent groups={groups} />
+    </>
+  );
 };
 
 export default VideoAndLookBook;
