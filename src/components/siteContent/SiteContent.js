@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Modal from "components/modal/Modal";
 import styles from "components/siteContent/siteContent.module.css";
 
-const SiteContent = ({ groups, twoColumns }) => {
+const SiteContent = ({ groups, twoColumns = false }) => {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(null);
   const [isModalOpened, setIsModalOpened] = useState(false);
