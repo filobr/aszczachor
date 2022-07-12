@@ -17,7 +17,7 @@ const Video = ({ videoSrc }) => {
           <source src={videoSrc} type="video/mp4" />
         </video>
       ) : (
-        <video className={styles.video} poster={poster} autoPlay loop muted>
+        <video className={styles.video} poster={poster} autoPlay loop>
           <source src={videoSrc} type="video/mp4" />
         </video>
       )}
