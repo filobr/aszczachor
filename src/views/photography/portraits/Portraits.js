@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import importAll from "components/ImportAll";
 import styles from "views/photography/portraits/portraits.module.css";
 import Modal from "components/modal/Modal";
@@ -10,6 +10,10 @@ const portraitsImg = importAll(
 const Portraits = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
   const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const onPhotoClick = ({ currentTarget }) => {
     setSelectedPhotoIndex(Number(currentTarget.dataset.index));

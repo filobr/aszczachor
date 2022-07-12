@@ -42,10 +42,6 @@
   width: 100%;
 }
 
-.container ul span:hover {
-  color: #f2de5f;
-}
-
 .container ul span img {
   height: 12px;
   width: 12px;
@@ -65,7 +61,6 @@
   transform: skew(25deg);
   animation-direction: alternate;
 }
-
 
 @media screen and (min-width: 801px) {
   .container {

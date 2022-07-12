@@ -1,9 +1,8 @@
 import { useState } from "react";
-import styles from "components/video/video.module.css";
-import poster from "assets/newCollection/homeOffice/LookBook/5. busy/1.jpg";
 import { useEffect } from "react";
+import styles from "components/video/video.module.css";
 
-const Video = ({ videoSrc }) => {
+const Video = ({ videoSrc, poster }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,7 @@
 import importAll from "components/ImportAll";
 import SiteContent from "components/siteContent/SiteContent";
 import Video from "components/video/Video";
+import poster from "assets/newCollection/homeOffice/Video/poster.jpg";
 
 const group1Img = importAll(
   require.context(
@@ -82,7 +83,7 @@ const videoSrc =
 const VideoAndLookBook = () => {
   return (
     <>
-      <Video videoSrc={videoSrc} />
+      <Video videoSrc={videoSrc} poster={poster} />
       <SiteContent groups={groups} />
     </>
   );
