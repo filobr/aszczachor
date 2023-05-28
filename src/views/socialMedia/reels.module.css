@@ -26,8 +26,26 @@
 .cardContent {
   width: 100%;
   display: grid;
-  justify-items: center;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
+}
+
+.cardItem {
+  justify-self: center;
+}
+
+@media screen and (max-width: 640px) {
+  .cardContainer {
+    width: 90%;
+  }
+  .cardLogo {
+    width: 100px;
+  }
+  .cardTitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .cardContent {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

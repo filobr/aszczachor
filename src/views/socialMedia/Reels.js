@@ -12,9 +12,13 @@ const Card = ({ links, logo, title }) => {
       <div className={styles.cardContent}>
         {links.map(link => {
           if (link.includes("https://www.instagram.com")) {
-            return <InstagramEmbed url={link} key={link} retryDisabled />;
+            return (
+              <div className={styles.cardItem}>
+                <InstagramEmbed url={link} key={link} retryDisabled />
+              </div>
+            );
           } else if (link.includes("https://www.tiktok.com")) {
-            return <TikTokEmbed url={link} key={link} retryDelay={50000} />;
+            return <TikTokEmbed url={link} key={link} retryDisabled />;
           }
         })}
       </div>
