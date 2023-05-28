@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { InstagramEmbed } from "react-social-media-embed";
 import styles from "views/about/about.module.css";
 import importAll from "components/ImportAll";
 
