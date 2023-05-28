@@ -37,8 +37,8 @@ const routes = {
     label: "Influencers",
   },
   fashionCampaign: {
-    path: "/fashion-campaign",
-    label: "Campaign",
+    path: "/fashion-commercial",
+    label: "Commercial",
   },
   campaign: {
     path: "/campaign",

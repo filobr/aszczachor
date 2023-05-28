@@ -9,12 +9,25 @@ const todoImg = importAll(
   )
 );
 
+const bellfamaImg = importAll(
+  require.context(
+    "assets/fashionStyling/campaign/BELLFAMA",
+    false,
+    /\.(jpg|png)$/
+  )
+);
+
 const todo = {
   photos: todoImg,
   description: "Todo Socks - Wero Wysoczyńska's assistant",
 };
 
-const groups = [todo];
+const bellfama = {
+  photos: bellfamaImg,
+  description: "BELLFAMA ATELIER KRAWIECKIE - LOOK BOOK ",
+};
+
+const groups = [todo, bellfama];
 
 const FashionCampaign = () => {
   return <SiteContent groups={groups} />;
