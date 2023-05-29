@@ -2,6 +2,10 @@ import VideoClip from "components/videoClip/VideoClip";
 
 const videos = [
   {
+    title: "Zaz - De Couleurs vives",
+    path: "https://www.youtube.com/embed/rud0XHQza1Q",
+  },
+  {
     title: "Roksana Węgiel - Korona",
     path: "https://www.youtube.com/embed/Q5As_wiR4DE",
   },

@@ -18,6 +18,7 @@ import Portraits from "views/photography/portraits/Portraits";
 import StreetPhotography from "views/photography/streetPhotography/StreetPhotography";
 import Reportage from "views/photography/Reportage";
 import VideoAndLookBook from "views/homeOffice/VideoAndLookBook";
+import Reels from "views/socialMedia/Reels";
 
 const routes = {
   mainPage: {
@@ -37,8 +38,8 @@ const routes = {
     label: "Influencers",
   },
   fashionCampaign: {
-    path: "/fashion-campaign",
-    label: "Campaign",
+    path: "/fashion-commercial",
+    label: "Commercial",
   },
   campaign: {
     path: "/campaign",
@@ -87,6 +88,10 @@ const routes = {
   reportage: {
     path: "/reportage",
     label: "Reportage",
+  },
+  reels: {
+    path: "/social-media-reels",
+    label: "Reels",
   },
 };
 
@@ -141,6 +146,7 @@ const App = () => {
         component={StreetPhotography}
       />
       <Route path={routes.reportage.path} exact component={Reportage} />
+      <Route path={routes.reels.path} exact component={Reels} />
       <Route path={routes.about.path} exact component={About} />
       <FooterMobile socialPaths={socialPaths} />
     </BrowserRouter>

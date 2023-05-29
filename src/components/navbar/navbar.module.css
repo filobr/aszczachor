@@ -79,7 +79,7 @@
   height: 30px;
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 960px) {
   .navigationContainerDesktop {
     display: none;
   }
@@ -92,7 +92,7 @@
     height: 50px;
   }
 }
-@media screen and (min-width: 721px) {
+@media screen and (min-width: 961px) {
   .hamburgerIcon,
   .mobDiv {
     display: none;

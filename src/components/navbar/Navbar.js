@@ -39,6 +39,8 @@ const Navbar = ({ routes, socialPaths }) => {
     routes.reportage,
   ];
 
+  const socialMediaContentDropdown = [routes.reels];
+
   const mobileMenuList = [routes.about];
 
   const [isFashionStylingOpened, setIsFashionStylingOpened] = useState(false);
@@ -46,6 +48,7 @@ const Navbar = ({ routes, socialPaths }) => {
   const [isNewCollectionOpened, setIsNewCollectionOpened] = useState(false);
   const [isPhotographyOpened, setIsPhotographyOpened] = useState(false);
   const [isHamburgerMenuOpened, setIsHamburgerMenuOpened] = useState(false);
+  const [isSocialMediaOpened, setIsSocialMediaOpened] = useState(false);
   const menuBtn = useRef();
 
   return (
@@ -133,6 +136,21 @@ const Navbar = ({ routes, socialPaths }) => {
                 />
               )}
             </div>
+            <div
+              className={styles.dropdownMenu}
+              onMouseLeave={() => setIsSocialMediaOpened(false)}
+            >
+              <NavButton
+                label="Social Media Content"
+                onMouseEnter={() => setIsSocialMediaOpened(true)}
+              />
+              {isSocialMediaOpened && (
+                <Dropdown
+                  items={socialMediaContentDropdown}
+                  onClick={() => setIsSocialMediaOpened(false)}
+                />
+              )}
+            </div>
             <NavButtonLink label={routes.about.label} to={routes.about.path} />
           </div>
           <div className={styles.socialButtons}>
@@ -158,6 +176,7 @@ const Navbar = ({ routes, socialPaths }) => {
           collections={collectionsDropdown}
           newCollection={newCollectionDropdown}
           photography={fashionPhotographyDropdown}
+          socialMedia={socialMediaContentDropdown}
           links={mobileMenuList}
           SetIsMenuOpened={() => setIsHamburgerMenuOpened(false)}
           menuBtn={menuBtn}

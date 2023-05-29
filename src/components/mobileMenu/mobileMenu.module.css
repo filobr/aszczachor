@@ -62,7 +62,7 @@
   animation-direction: alternate;
 }
 
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 961px) {
   .container {
     display: none;
   }
