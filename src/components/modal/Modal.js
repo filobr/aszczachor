@@ -89,10 +89,18 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
         <div className={styles.left}>
           <img src={prevIcon} alt="prev" onClick={prevPhoto} ref={left} />
         </div>
-        <div className={styles.photo}>
-          {photos[selected].includes("https://") ? (
-            <InstagramEmbed url={photos[selected]} key={seed} />
-          ) : (
+        {photos[selected].includes("https://") ? (
+          <div
+            className={styles.photo}
+            ref={image}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <InstagramEmbed url={photos[selected]} key={seed} retryDisabled />
+          </div>
+        ) : (
+          <div className={styles.photo}>
             <img
               src={photos[selected]}
               alt={`img${selected}`}
@@ -101,8 +109,8 @@ const Modal = ({ selected, setSelected, photos, setIsModalOpened }) => {
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
             />
-          )}
-        </div>
+          </div>
+        )}
         <div className={styles.right}>
           <img src={nextIcon} alt="next" onClick={nextPhoto} ref={right} />
         </div>

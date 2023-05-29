@@ -176,6 +176,7 @@ const Navbar = ({ routes, socialPaths }) => {
           collections={collectionsDropdown}
           newCollection={newCollectionDropdown}
           photography={fashionPhotographyDropdown}
+          socialMedia={socialMediaContentDropdown}
           links={mobileMenuList}
           SetIsMenuOpened={() => setIsHamburgerMenuOpened(false)}
           menuBtn={menuBtn}

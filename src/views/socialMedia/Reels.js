@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { InstagramEmbed, TikTokEmbed } from "react-social-media-embed";
+import PropTypes from "prop-types";
 import styles from "views/socialMedia/reels.module.css";
 import deezeeLogo from "assets/socialMediaContent/logo/DeezeeLogo.jpeg";
 import someLogo from "assets/socialMediaContent/logo/SomeLogo.jpeg";
@@ -13,17 +15,27 @@ const Card = ({ links, logo, title }) => {
         {links.map(link => {
           if (link.includes("https://www.instagram.com")) {
             return (
-              <div className={styles.cardItem}>
-                <InstagramEmbed url={link} key={link} retryDisabled />
+              <div className={styles.cardItem} key={link}>
+                <InstagramEmbed url={link} retryDisabled />
               </div>
             );
           } else if (link.includes("https://www.tiktok.com")) {
-            return <TikTokEmbed url={link} key={link} retryDisabled />;
+            return (
+              <div className={styles.cardItem} key={link}>
+                <TikTokEmbed url={link} retryDisabled />;
+              </div>
+            );
           }
         })}
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.string),
+  logo: PropTypes.string,
+  title: PropTypes.string,
 };
 
 const NIKA_BOCIAN = {
@@ -96,8 +108,12 @@ const HOUSE = {
 const cards = [NIKA_BOCIAN, SPRING_SUMER_23, TREND_ALERT, TRIKI, SOME, HOUSE];
 
 const Reels = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.reelsContainer}>
       {cards.map(({ links, logo, title }) => {
         return <Card links={links} logo={logo} title={title} key={links[0]} />;
       })}

@@ -9,6 +9,7 @@ const MobileMenu = ({
   collections,
   newCollection,
   photography,
+  socialMedia,
   links,
   SetIsMenuOpened,
   menuBtn,
@@ -17,6 +18,7 @@ const MobileMenu = ({
   const [isCollectionsOpened, setIsCollectionsOpened] = useState(false);
   const [isNewCollectionOpened, setIsNewCollectionOpened] = useState(false);
   const [isPhotographyOpened, setIsPhotographyOpened] = useState(false);
+  const [isSocialMediaOpened, setIsSocialMediaOpened] = useState(false);
   const ref = useRef();
 
   useEffect(() => {
@@ -64,6 +66,13 @@ const MobileMenu = ({
           list={photography}
           SetIsMenuOpened={SetIsMenuOpened}
         />
+        <ExpandComponent
+          label="Social Media Content"
+          changeState={() => setIsSocialMediaOpened(!isSocialMediaOpened)}
+          isOpened={isSocialMediaOpened}
+          list={socialMedia}
+          SetIsMenuOpened={SetIsMenuOpened}
+        />
         {links.map(({ label, path }) => (
           <Link
             style={{ textDecoration: "none", fontWeight: "bold" }}
@@ -86,6 +95,7 @@ MobileMenu.propTypes = {
   collections: PropTypes.arrayOf(PropTypes.object),
   newCollection: PropTypes.arrayOf(PropTypes.object),
   photography: PropTypes.arrayOf(PropTypes.object),
+  socialMedia: PropTypes.arrayOf(PropTypes.object),
   links: PropTypes.PropTypes.arrayOf(PropTypes.object),
   SetIsMenuOpened: PropTypes.func,
   menuBtn: PropTypes.object,
