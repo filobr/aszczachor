@@ -48,7 +48,7 @@ const NIKA_BOCIAN = {
   title: "DEEZEE X NIKA BOCIAN",
 };
 
-const SPRING_SUMER_23 = {
+const SPRING_SUMMER_23 = {
   links: [
     "https://www.instagram.com/p/CqQTTgxoSqD/",
     "https://www.instagram.com/reel/CrGYApLIRDW/",
@@ -60,7 +60,7 @@ const SPRING_SUMER_23 = {
     "https://www.instagram.com/reel/CsbNb8fqhMv/",
     "https://www.instagram.com/reel/CsYN2bXICl7/",
   ],
-  title: "SPRING/SUMER' 23",
+  title: "SPRING/SUMMER' 23",
 };
 
 const TREND_ALERT = {
@@ -85,7 +85,7 @@ const SOME = {
   links: [
     "https://www.instagram.com/p/CsoZEp-gvkU/",
     "https://www.instagram.com/p/CsO0FO4I-bh/",
-    "https://www.instagram.com/p/CrdvwSWoe6U/",
+    "https://www.instagram.com/reel/Csy2-w5IFrs/",
   ],
   logo: someLogo,
 };
@@ -105,7 +105,7 @@ const HOUSE = {
   logo: houseLogo,
 };
 
-const cards = [NIKA_BOCIAN, SPRING_SUMER_23, TREND_ALERT, TRIKI, SOME, HOUSE];
+const cards = [NIKA_BOCIAN, SPRING_SUMMER_23, TREND_ALERT, TRIKI, SOME, HOUSE];
 
 const Reels = () => {
   useEffect(() => {
