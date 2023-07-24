@@ -18,6 +18,14 @@ const bellfamaImg = importAll(
   )
 );
 
+const avenuesCampagneImg = importAll(
+  require.context(
+    "assets/fashionStyling/campaign/42-avenues-campagine",
+    false,
+    /\.(jpg|png)$/
+  )
+);
+
 const todo = {
   photos: todoImg,
   description: "Todo Socks - Wero Wysoczyńska's assistant",
@@ -50,7 +58,12 @@ const deezeeReels = {
   description: "DEEZEE - stylizacje reels",
 };
 
-const groups = [todo, bellfama, deezeeReels];
+const avenuesCampagne = {
+  photos: avenuesCampagneImg,
+  description: "42 Avenues Campagine ",
+};
+
+const groups = [todo, bellfama, deezeeReels, avenuesCampagne];
 
 const FashionCampaign = () => {
   return <SiteContent groups={groups} />;
