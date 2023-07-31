@@ -1,6 +1,7 @@
 import SiteContent from "components/siteContent/SiteContent";
 import importAll from "components/ImportAll";
 import reelsImage from "assets/fashionStyling/campaign/Reels.jpeg";
+import beautyBrands from "assets/fashionStyling/campaign/house-of-beauty-brands/beauty-brands.jpg";
 
 const todoImg = importAll(
   require.context(
@@ -55,15 +56,26 @@ const deezeeReels = {
     "https://www.instagram.com/reel/CqGF_6gIo5-/",
     "https://www.instagram.com/reel/Cp5Qq_xoQsr/",
   ],
-  description: "DEEZEE - stylizacje reels",
+  description: "DEEZEE - reels",
 };
 
 const avenuesCampagne = {
   photos: avenuesCampagneImg,
-  description: "42 Avenues Campagine ",
+  description: "42 Avenues Campaign",
 };
 
-const groups = [todo, bellfama, deezeeReels, avenuesCampagne];
+const houseOfBeutyBrands = {
+  photos: [beautyBrands, "https://www.instagram.com/reel/CphoTlWovLr/"],
+  description: "HOUSE OF BEAUTY BRANDS - Anna Utta's assistant",
+};
+
+const groups = [
+  avenuesCampagne,
+  deezeeReels,
+  bellfama,
+  todo,
+  houseOfBeutyBrands,
+];
 
 const FashionCampaign = () => {
   return <SiteContent groups={groups} />;

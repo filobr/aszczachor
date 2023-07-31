@@ -5,6 +5,7 @@ import styles from "views/socialMedia/reels.module.css";
 import deezeeLogo from "assets/socialMediaContent/logo/DeezeeLogo.jpeg";
 import someLogo from "assets/socialMediaContent/logo/SomeLogo.jpeg";
 import houseLogo from "assets/socialMediaContent/logo/HouseLogo.jpeg";
+import chuchlaLogo from "assets/socialMediaContent/logo/ChuchlaLogo.jpg";
 
 const Card = ({ links, logo, title }) => {
   return (
@@ -105,7 +106,20 @@ const HOUSE = {
   logo: houseLogo,
 };
 
-const cards = [NIKA_BOCIAN, SPRING_SUMMER_23, TREND_ALERT, TRIKI, SOME, HOUSE];
+const CHUCHLA = {
+  links: ["https://www.instagram.com/reel/CvSX04_MKWK/"],
+  logo: chuchlaLogo,
+};
+
+const cards = [
+  NIKA_BOCIAN,
+  SPRING_SUMMER_23,
+  TREND_ALERT,
+  TRIKI,
+  SOME,
+  HOUSE,
+  CHUCHLA,
+];
 
 const Reels = () => {
   useEffect(() => {
