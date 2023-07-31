@@ -63,7 +63,7 @@ const avenuesCampagne = {
   description: "42 Avenues Campagine ",
 };
 
-const groups = [todo, bellfama, deezeeReels, avenuesCampagne];
+const groups = [avenuesCampagne, deezeeReels, bellfama, todo];
 
 const FashionCampaign = () => {
   return <SiteContent groups={groups} />;
