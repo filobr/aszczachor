@@ -84,6 +84,9 @@ const TRIKI = {
 
 const SOME = {
   links: [
+    "https://www.instagram.com/reel/Cv-I3OCoMlu/",
+    "https://www.instagram.com/reel/Cw0GTh4IxCQ/",
+    "https://www.instagram.com/reel/CuR_2tCNnFL/",
     "https://www.instagram.com/p/CsoZEp-gvkU/",
     "https://www.instagram.com/p/CsO0FO4I-bh/",
     "https://www.instagram.com/reel/Csy2-w5IFrs/",
