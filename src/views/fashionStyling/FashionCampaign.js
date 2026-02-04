@@ -27,6 +27,15 @@ const avenuesCampagneImg = importAll(
   )
 );
 
+const ansinImg = importAll(
+  require.context("assets/fashionStyling/campaign/Ansin", false, /\.(jpg|png)$/)
+);
+
+const ansin = {
+  photos: ansinImg,
+  description: "Fashion campaigns for Ansin",
+};
+
 const todo = {
   photos: todoImg,
   description: "Todo Socks - Wero Wysoczyńska's assistant",
@@ -70,6 +79,7 @@ const houseOfBeutyBrands = {
 };
 
 const groups = [
+  ansin,
   avenuesCampagne,
   deezeeReels,
   bellfama,

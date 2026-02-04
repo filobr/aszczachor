@@ -10,6 +10,19 @@ const videos = [
     path: "https://www.youtube.com/embed/taStL0fcsXM",
   },
   {
+    title: "ZUZA BAUM - TRUST (Live Session)",
+    path: "https://www.youtube.com/embed/Xzn9Zggy6h0?si=tNWiZnFX-tQr_-o6",
+  },
+  {
+    title: "ZUZA BAUM x Anna Chmiel - River | Live Session",
+    path: "https://www.youtube.com/embed/c0QmLjkgRoc?si=g_OZGECAlqCK8s_m",
+  },
+  {
+    title:
+      "the ancimons / Jasiek Piwowarczyk i Zuza Baum - Summer in Burgas (Afro) | Live Session",
+    path: "https://www.youtube.com/embed/Ht4DePb9kWU?si=T6tbWVVhL0wYilgc",
+  },
+  {
     title: "ZUZA BAUM - Deszcze (Live Session)",
     path: "https://www.youtube.com/embed/xnvL0oCnRLU",
   },
