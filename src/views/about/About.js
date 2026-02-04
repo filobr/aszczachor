@@ -4,7 +4,7 @@ import importAll from "components/ImportAll";
 
 const images = importAll(require.context("assets/about", false, /\.(jpg)$/));
 const text = [
-  `Hi! My name is Aleksandra Szcząchor, I am a 26 years old stylist,
+  `Hi! My name is Aleksandra Szcząchor, I am a 28 years old stylist,
 fashion designer, budding photographer and videographer living in Poland.
 I graduated from Jagiellonian University with a Bachelor's degree in
 Culture and Media Management and am currently pursuing a Master's
